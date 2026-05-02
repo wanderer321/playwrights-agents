@@ -1,0 +1,351 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-29T06:07:08.391958",
+  "completed_at": "2026-04-29T06:27:05.172141",
+  "summary": {
+    "total": 35,
+    "passed": 2,
+    "failed": 33,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "TestPureActivity",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_activity_card_component",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 206, in test_activity_card_component\n    self.page.wait_for(\".tabs\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The method Page.wait_for() in the installed Minium version does not support the 'timeout' keyword argument. The method signature likely expects only the selector or uses a default timeout internally.",
+            "fix_suggestion": "Remove the 'timeout=5' argument from the wait_for call. If a specific timeout is required, verify the Minium version documentation to see if the method signature expects it as a positional argument (e.g., wait_for(selector, 5)) or if a different method like wait_for_element should be used.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_card_component_structure",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 502, in test_activity_card_component_structure\n    self.page.wait_for(\".card--activity-card\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The API signature differs from what the test code expects.",
+            "fix_suggestion": "Pass timeout as a positional argument instead: self.page.wait_for(\".card--activity-card\", 5). Alternatively, check Minium documentation for the correct API signature - some versions use different parameter names or require using a different method like wait_for_element().",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_create_form",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 232, in test_activity_create_form\n    self.page.wait_for(\".create-brand\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch - the Page.wait_for() method in this version of Minium does not accept a 'timeout' keyword argument. The test code is using an incorrect method signature.",
+            "fix_suggestion": "Remove the 'timeout' parameter from wait_for() call. Change 'self.page.wait_for(\".create-brand\", timeout=5)' to 'self.page.wait_for(\".create-brand\")'. Alternatively, check Minium documentation for the correct way to specify timeout - it may require using a different method like 'wait_for_element()' or setting a global timeout via 'self.page.wait_for(\".create-brand\", 5)' (positional argument instead of keyword).",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_history_navigation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 166, in test_activity_history_navigation\n    self.page.wait_for(\".profile-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in Minium does not accept 'timeout' as a keyword argument. The correct parameter name is 'max_time' in Minium's API.",
+            "fix_suggestion": "Change 'timeout=5' to 'max_time=5' in the wait_for() call. The corrected line should be: self.page.wait_for(\".profile-page\", max_time=5)",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_history_tabs",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 182, in test_activity_history_tabs\n    self.page.wait_for(\".tabs\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch - the Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The test code is using an incorrect method signature.",
+            "fix_suggestion": "Check the Minium version and use the correct API. Options: (1) Remove the timeout parameter and use default: self.page.wait_for('.tabs'), (2) Pass timeout as positional argument if supported: self.page.wait_for('.tabs', 5), or (3) Use alternative method like self.page.wait_for_element('.tabs', timeout=5) depending on your Minium version.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_list_rendering",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 108, in test_activity_list_rendering\n    self.page.wait_for(\".index-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch - the Page.wait_for() method in this version of Minium does not accept a 'timeout' keyword argument. The test code is using an incorrect API signature.",
+            "fix_suggestion": "Check the Minium version documentation for the correct wait_for() signature. Possible fixes: (1) Remove the timeout parameter: self.page.wait_for(\".index-page\"), (2) Use positional argument if supported: self.page.wait_for(\".index-page\", 5), or (3) Use an alternative waiting method like self.page.wait_for_element() or wrap in a custom timeout handler.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_app_launch_and_network_check",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 12, in test_app_launch_and_network_check\n    self.app.launch()\n    ^^^^^^^^^^^^^^^\nAttributeError: 'App' object has no attribute 'launch'. Did you mean: 'relaunch'?\n",
+          "diagnosis": {
+            "root_cause": "The Minium framework's App object does not have a 'launch' method. The correct method to start or restart the Mini Program is 'relaunch'.",
+            "fix_suggestion": "Change the method call from self.app.launch() to self.app.relaunch().",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_badges_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 367, in test_badges_page\n    self.page.wait_for(\".badges-grid\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API Signature Mismatch: The installed Minium library's `Page.wait_for()` method does not accept 'timeout' as a keyword argument. This often occurs due to version differences where the method signature expects positional arguments or uses a different parameter name.",
+            "fix_suggestion": "Try passing the timeout value as a positional argument instead: `self.page.wait_for(\".badges-grid\", 5)`. If that fails, verify your Minium version and update the library (`pip install -U minium`) to match the documentation you are following.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_cover_selection",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 254, in test_cover_selection\n    self.page.wait_for(\".cover-scroll\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The test is using an incorrect API signature - the method likely expects timeout as a positional argument or doesn't support it at all.",
+            "fix_suggestion": "Change the call to use positional argument: self.page.wait_for(\".cover-scroll\", 5) or check the Minium documentation for the correct wait_for() signature. Alternatively, use the page.wait_for() method without timeout and rely on default timeout, or use a different waiting mechanism like self.page.wait_for_element() if available.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_credit_notice_display",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 274, in test_credit_notice_display\n    self.page.wait_for(\".create-body\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch. The installed version of Minium does not support the 'timeout' argument for the Page.wait_for() method. The method signature expects only the selector.",
+            "fix_suggestion": "Remove the 'timeout=5' argument from the wait_for call. If a specific timeout is required, configure it in the project's config.json (e.g., 'assert_capture' -> 'max_wait_time') or use a custom wait loop.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_credit_score_component",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 520, in test_credit_score_component\n    self.page.wait_for(\".profile-credit-badge\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The method Page.wait_for() in the installed Minium version does not accept 'timeout' as a keyword argument. It likely expects the timeout value as a second positional argument.",
+            "fix_suggestion": "Change the call to pass the timeout as a positional argument: `self.page.wait_for(\".profile-credit-badge\", 5)`",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_credit_score_display",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 327, in test_credit_score_display\n    self.page.wait_for(\".score-card\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_case": "The method Page.wait_for() in the installed Minium version does not accept a 'timeout' keyword argument when a string selector is passed directly. The signature likely expects a callable (function) as the first argument to utilize the timeout, or it is a simpler wrapper for page path waiting that lacks timeout configuration.",
+            "fix_suggestion": "Refactor the wait condition to use a lambda function. This allows passing the timeout argument to the wait_for method, which expects a callable condition. Change `self.page.wait_for(\".score-card\", timeout=5)` to `self.page.wait_for(lambda: self.page.get_element(\".score-card\"), timeout=5)`. Alternatively, use `self.page.get_element(\".score-card\", timeout=5)` directly if the goal is simply to wait for and retrieve the element.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_education_auth_form",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 602, in test_education_auth_form\n    self.page.wait_for(\".method-group\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API mismatch - the Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The test code is using an API signature that differs from the installed Minium version.",
+            "fix_suggestion": "Change the wait_for call to pass timeout as a positional argument instead: `self.page.wait_for(\".method-group\", 5)` or check the Minium documentation for the correct API signature. Alternatively, if the installed version doesn't support timeout at all, use `self.page.wait_for(\".method-group\")` with the default timeout.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_education_auth_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 468, in test_education_auth_page\n    self.page.wait_for(\".section-header\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The method signature differs from what the test code expects.",
+            "fix_suggestion": "Pass timeout as a positional argument instead: self.page.wait_for(\".section-header\", 5). Alternatively, check Minium documentation for the correct API signature - some versions use different parameter names or require using a different method like wait_for_element().",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_feedback_form_validation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 580, in test_feedback_form_validation\n    self.page.wait_for(\".feedback-textarea\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "Incorrect Minium API usage. The method `Page.wait_for()` is generally used for waiting for page navigation or specific callback conditions and does not accept a selector string as the first argument combined with a 'timeout' keyword argument in this manner. The test is attempting to wait for an element to render using the wrong method.",
+            "fix_suggestion": "Replace `self.page.wait_for(...)` with `self.page.wait_for_element(...)`. The correct code should be: `self.page.wait_for_element(\".feedback-textarea\", timeout=5)`.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_feedback_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 423, in test_feedback_page\n    self.page.wait_for(\".feedback-header\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch. The installed version of the Minium library does not support the 'timeout' keyword argument for the Page.wait_for() method, causing a TypeError.",
+            "fix_suggestion": "Remove the 'timeout' keyword argument and rely on the default timeout, or pass the timeout value as a positional argument (e.g., self.page.wait_for(\".feedback-header\", 5)). Verify the correct method signature for your specific Minium version.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_feedback_type_selection",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 449, in test_feedback_type_selection\n    self.page.wait_for(\".type-options\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The `wait_for()` method in this version of Minium does not accept 'timeout' as a keyword argument. The method signature differs from what the test code expects - it likely uses a different parameter name (e.g., 'max_time') or requires a positional argument.",
+            "fix_suggestion": "Change the wait_for call to use the correct parameter name. In Minium, it's typically 'max_time' instead of 'timeout'. Change: `self.page.wait_for(\".type-options\", timeout=5)` to `self.page.wait_for(\".type-options\", max_time=5)` or use positional argument: `self.page.wait_for(\".type-options\", 5)`",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_get_user_phone_number",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 74, in test_get_user_phone_number\n    self.page.wait_for(\".login-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The test is using an incorrect method signature - passing timeout=5 as a named parameter when the method expects it as a positional argument or doesn't support it at all.",
+            "fix_suggestion": "Change the call to pass timeout as a positional argument: `self.page.wait_for(\".login-page\", 5)` instead of `self.page.wait_for(\".login-page\", timeout=5)`. Alternatively, check the Minium documentation for the correct API - some versions use `wait_for(timeout=5, selector=\".login-page\")` or require using a different method like `wait_for_element()`.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_global_exception_handling",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 37, in test_global_exception_handling\n    self.page.wait_for(\".index-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in the Minium version being used does not accept a 'timeout' keyword argument. This is an API signature mismatch - the test code is using a parameter that doesn't exist in the current Minium library version.",
+            "fix_suggestion": "Check the Minium documentation for the correct wait_for() signature. In older Minium versions, try using wait_for() without the timeout parameter, or use an alternative method like wait_for_element() or set a global timeout. The correct usage might be: self.page.wait_for('.index-page') without the timeout argument, or check if the parameter is named differently (e.g., 'max_time' or 'wait_time').",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_loading_component",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 492, in test_loading_component\n    self.page.wait_for(\".page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The method Page.wait_for() in the installed Minium version does not support the 'timeout' keyword argument. The method signature likely only accepts the selector (e.g., def wait_for(self, selector)).",
+            "fix_suggestion": "Remove the 'timeout=5' keyword argument from the call. If a specific timeout is required, try passing it as a positional argument (e.g., wait_for(\".page\", 5)), or use the framework's global timeout setting. The immediate fix is: self.page.wait_for(\".page\")",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_location_permission_handling",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 92, in test_location_permission_handling\n    self.page.wait_for(\".profile-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "Incorrect method name used. The test calls Page.wait_for() with a CSS selector, but in Minium, wait_for() is typically used for data path changes or has a different signature. The correct method to wait for an element to appear is Page.wait_for_element().",
+            "fix_suggestion": "Change the method call from self.page.wait_for(\".profile-page\", timeout=5) to self.page.wait_for_element(\".profile-page\", timeout=5).",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_member_center_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 349, in test_member_center_page\n    self.page.wait_for(\".mc-brand\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch - the Page.wait_for() method in the installed Minium version does not accept a 'timeout' keyword argument. The test code was likely written for a different version of Minium that supports this parameter.",
+            "fix_suggestion": "Check the Minium version and use the correct API: 1) Update Minium to latest version with 'pip install --upgrade minium', or 2) Use the correct method signature for current version - try passing timeout as positional argument like 'wait_for(\".mc-brand\", 5)' or use alternative method like 'page.wait_for_element(\".mc-brand\", 5)' depending on your Minium version",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_page_navigation_stack",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 555, in test_page_navigation_stack\n    self.page.wait_for(\".index-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API misuse. The method `Page.wait_for()` in Minium is designed to wait for a specific page path (navigation) and does not accept a `timeout` keyword argument. Furthermore, the selector `.index-page` suggests the test intends to wait for a UI element to render, not a page route.",
+            "fix_suggestion": "To wait for an element to appear with a timeout, use `self.page.get_element(\".index-page\", timeout=5)`. The `get_element` method implicitly waits for the element to render. If strictly waiting for a page navigation event, use `self.page.wait_for(\"path/to/page\")` without the timeout argument.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_page_reload_stability",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 677, in test_page_reload_stability\n    self.page.wait_for(\".profile-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch - the Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The test code is using an incorrect method signature.",
+            "fix_suggestion": "Change the wait_for call to pass timeout as a positional argument instead of a keyword argument: `self.page.wait_for(\".profile-page\", 5)` or check the Minium documentation for the correct API signature for your version. Some Minium versions may use different method names like `wait_for_element()` or require timeout in a different format.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_pricing_card_selection",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 625, in test_pricing_card_selection\n    self.page.wait_for(\".pricing-group\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in Minium does not accept a 'timeout' keyword argument. The test code is using an incorrect method signature - the timeout parameter is not supported by this version of Minium's wait_for() API.",
+            "fix_suggestion": "Remove the 'timeout=5' argument from the wait_for() call. If a custom timeout is needed, check Minium documentation for the correct approach - it may require using a different method like wait_for_element() with timeout, or setting a global timeout configuration. Change 'self.page.wait_for(\".pricing-group\", timeout=5)' to 'self.page.wait_for(\".pricing-group\")' or use the correct API for timeout specification.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_privilege_list",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 647, in test_privilege_list\n    self.page.wait_for(\".privilege-list\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The method Page.wait_for() in the installed Minium version does not support the 'timeout' keyword argument. The test script is calling the method with a signature that does not match the framework's API definition.",
+            "fix_suggestion": "Replace the wait_for call with get_element, which supports the timeout parameter for waiting for elements to render. Change: `self.page.wait_for(\".privilege-list\", timeout=5)` to `self.page.get_element(\".privilege-list\", timeout=5)`.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_profile_menu_navigation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 312, in test_profile_menu_navigation\n    self.page.wait_for(\".profile-menu\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The API signature differs from what the test code is using.",
+            "fix_suggestion": "Pass the timeout as a positional argument instead: self.page.wait_for(\".profile-menu\", 5). Alternatively, check the Minium documentation for the correct method signature - some versions use wait_for(selector, max_time) or require using a different method like wait_for_element().",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_profile_page_rendering",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 290, in test_profile_page_rendering\n    self.page.wait_for(\".profile-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in Minium does not accept 'timeout' as a keyword argument. The test is using an incorrect method signature - the API expects timeout as a positional argument or uses a different parameter name.",
+            "fix_suggestion": "Change the wait_for call to use positional argument for timeout: `self.page.wait_for(\".profile-page\", 5)` or check Minium documentation for the correct parameter name (it may be 'max_time' or 'wait_time' instead of 'timeout').",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_pull_down_refresh",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 126, in test_pull_down_refresh\n    self.page.wait_for(\".index-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API usage error - the Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The method signature likely uses a positional argument or a different parameter name.",
+            "fix_suggestion": "Change the wait_for call to use positional argument: self.page.wait_for(\".index-page\", 5) or check the Minium documentation for the correct method signature. Alternatively, if the method doesn't support timeout at all, remove the timeout parameter and rely on default behavior.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_settings_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 391, in test_settings_page\n    self.page.wait_for(\".page-header\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "The Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The method signature likely expects timeout as a positional argument or doesn't support it at all.",
+            "fix_suggestion": "Change the call from 'self.page.wait_for(\".page-header\", timeout=5)' to 'self.page.wait_for(\".page-header\", 5)' (passing timeout as a positional argument), or check the Minium API documentation for the correct method signature. Alternatively, use 'self.page.wait_for(\".page-header\")' without timeout and rely on the default wait time.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_settings_switches",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 413, in test_settings_switches\n    self.page.wait_for(\".section\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API usage error - the Page.wait_for() method in Minium does not accept a 'timeout' keyword argument. The method signature differs from what the test is attempting to use.",
+            "fix_suggestion": "Check the Minium API documentation for the correct wait_for() signature. It likely accepts timeout as a positional argument or uses a different method name. Try: self.page.wait_for('.section', 5) or use self.page.wait_for('.section') with a separate timeout configuration, or use the correct method like self.page.wait_for_element('.section', timeout=5)",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_swiper_navigation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 146, in test_swiper_navigation\n    self.page.wait_for(\".slogan-swiper\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "API signature mismatch - the Page.wait_for() method in this version of Minium does not accept 'timeout' as a keyword argument. The method signature is different from what the test code assumes.",
+            "fix_suggestion": "Check the Minium API documentation for the correct wait_for() signature. Likely fixes: (1) Pass timeout as positional argument: self.page.wait_for(\".slogan-swiper\", 5), or (2) Use a different waiting method like wait_for_element() or element_exists() with a separate sleep/wait mechanism, or (3) Upgrade Minium version if the timeout parameter is supported in newer versions.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_wechat_user_login_flow",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 52, in test_wechat_user_login_flow\n    self.page.wait_for(\".login-page\", timeout=5)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\nTypeError: Page.wait_for() got an unexpected keyword argument 'timeout'\n",
+          "diagnosis": {
+            "root_cause": "Incorrect method usage. The test is calling `Page.wait_for()` (typically used for waiting for page navigation/route changes) with a CSS selector and a `timeout` keyword argument. The installed version of Minium does not support the `timeout` keyword argument for `wait_for`, or the method signature is strictly positional. Furthermore, to wait for a UI element (like '.login-page') to appear, the correct method is `wait_for_element`, not `wait_for`.",
+            "fix_suggestion": "Change the method call from `self.page.wait_for(\".login-page\", timeout=5)` to `self.page.wait_for_element(\".login-page\", timeout=5)`. The `wait_for_element` method is designed specifically for waiting on UI selectors and supports the timeout argument.",
+            "confidence": "high"
+          }
+        }
+      ]
+    }
+  ]
+}

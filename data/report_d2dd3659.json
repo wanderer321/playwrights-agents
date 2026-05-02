@@ -1,0 +1,19 @@
+{
+  "test_mode": "expanded",
+  "project_name": "智绘工坊",
+  "project_type": "h5",
+  "created_at": "2026-04-29T14:46:04.861641",
+  "completed_at": "2026-04-29T14:49:05.276439",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 0.0
+  },
+  "diagnostic_summary": {
+    "total_failures": 0,
+    "categories": {}
+  },
+  "suites": []
+}

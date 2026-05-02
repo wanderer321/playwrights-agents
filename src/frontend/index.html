@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Playwright Agents - 单机版</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h1>Playwright Agents</h1>
+        <span class="badge">v2.0</span>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-btn active" data-tab="projects" onclick="switchTab('projects')">
+          📁 项目管理
+        </button>
+        <button class="nav-btn" data-tab="test" onclick="switchTab('test')">
+          ▶️ 测试控制台
+        </button>
+        <button class="nav-btn" data-tab="results" onclick="switchTab('results')">
+          📊 测试报告
+        </button>
+        <button class="nav-btn" data-tab="history" onclick="switchTab('history')">
+          🕐 历史报告
+        </button>
+        <button class="nav-btn" data-tab="settings" onclick="switchTab('settings')">
+          ⚙️ 系统设置
+        </button>
+      </nav>
+      <div class="sidebar-footer">
+        <div class="ai-label" id="aiLabel">AI: 查询中...</div>
+      </div>
+    </aside>
+
+    <!-- Main content -->
+    <main id="main-content">
+
+      <!-- === TAB: Projects === -->
+      <section class="tab-pane active" id="tab-projects">
+        <div class="page-header">
+          <h2>项目管理</h2>
+          <p>配置需要测试的代码目录</p>
+        </div>
+
+        <div class="card">
+          <h3>添加项目</h3>
+          <form id="addProjectForm">
+            <div class="form-group">
+              <label>项目名称</label>
+              <input type="text" id="projectName" placeholder="例如：智绘工坊" required />
+            </div>
+            <div class="form-group">
+              <label>项目类型</label>
+              <div class="type-selector">
+                <label class="type-option" onclick="selectProjectType('h5')">
+                  <input type="radio" name="projectType" value="h5" checked />
+                  <span class="type-badge">H5</span>
+                  <span class="type-desc">网页应用 (Playwright)</span>
+                </label>
+                <label class="type-option" onclick="selectProjectType('miniprogram')">
+                  <input type="radio" name="projectType" value="miniprogram" />
+                  <span class="type-badge mp">小程序</span>
+                  <span class="type-desc">微信小程序 (Minium)</span>
+                </label>
+              </div>
+            </div>
+
+            <!-- H5: single/split dir mode -->
+            <div id="h5Config">
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="isSingleDir" onchange="toggleDirMode()" />
+                  <span>是否总目录（不区分前后端）</span>
+                </label>
+              </div>
+              <div id="dirGroupSplit">
+                <div class="form-group">
+                  <label>前端代码目录（可添加多个）</label>
+                  <div class="input-group">
+                    <button type="button" class="btn-secondary" onclick="browseDir('frontend')">📂 选择目录</button>
+                    <input type="text" id="frontendDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" />
+                    <button type="button" class="btn-secondary" onclick="addDirFromInput('frontend')">添加</button>
+                  </div>
+                  <div id="hint-frontend" class="dir-hint" style="display:none">未能自动获取路径，请手动输入完整路径后点击"添加"</div>
+                  <ul id="frontendDirs" class="dir-list"></ul>
+                </div>
+                <div class="form-group">
+                  <label>后端代码目录（可添加多个）</label>
+                  <div class="input-group">
+                    <button type="button" class="btn-secondary" onclick="browseDir('backend')">📂 选择目录</button>
+                    <input type="text" id="backendDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" />
+                    <button type="button" class="btn-secondary" onclick="addDirFromInput('backend')">添加</button>
+                  </div>
+                  <div id="hint-backend" class="dir-hint" style="display:none">未能自动获取路径，请手动输入完整路径后点击"添加"</div>
+                  <ul id="backendDirs" class="dir-list"></ul>
+                </div>
+              </div>
+              <div id="dirGroupSingle" style="display:none">
+                <div class="form-group">
+                  <label>项目目录（可添加多个）</label>
+                  <div class="input-group">
+                    <button type="button" class="btn-secondary" onclick="browseDir('single')">📂 选择目录</button>
+                    <input type="text" id="singleDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" />
+                    <button type="button" class="btn-secondary" onclick="addDirFromInput('single')">添加</button>
+                  </div>
+                  <div id="hint-single" class="dir-hint" style="display:none">未能自动获取路径，请手动输入完整路径后点击"添加"</div>
+                  <ul id="singleDirs" class="dir-list"></ul>
+                </div>
+              </div>
+            </div>
+
+            <!-- MiniProgram config -->
+            <div id="miniprogramConfig" style="display:none">
+              <div class="form-group">
+                <label>小程序项目目录（可添加多个）</label>
+                <div class="input-group">
+                  <button type="button" class="btn-secondary" onclick="browseDir('miniapp')">📂 选择目录</button>
+                  <input type="text" id="miniappDir" class="dir-path-input" placeholder="D:\path\to\miniprogram" />
+                  <button type="button" class="btn-secondary" onclick="addDirFromInput('miniapp')">添加</button>
+                </div>
+                <ul id="miniappDirs" class="dir-list"></ul>
+              </div>
+              <div class="form-group">
+                <label>微信开发者工具路径</label>
+                <input type="text" id="devtoolsPath" placeholder="C:\Program Files (x86)\Tencent\微信web开发者工具\cli.bat" />
+                <p class="form-hint">用于启动自动化测试，需开启开发者工具的安全端口</p>
+              </div>
+              <div class="form-group">
+                <label>测试平台</label>
+                <select id="miniumPlatform">
+                  <option value="ide">IDE (模拟器)</option>
+                  <option value="android">Android 真机</option>
+                  <option value="ios">iOS 真机</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Hidden file input for webkitdirectory -->
+            <input type="file" id="dirPicker" webkitdirectory style="display:none" />
+            <button type="submit" class="btn-primary">保存项目</button>
+          </form>
+        </div>
+
+        <div class="card">
+          <h3>已配置项目</h3>
+          <div id="projectList">
+            <p class="text-muted">暂无项目，请添加</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- === TAB: Test Console === -->
+      <section class="tab-pane" id="tab-test">
+        <div class="page-header">
+          <h2>测试控制台</h2>
+          <p>一键触发完整的测试流程</p>
+        </div>
+
+        <div class="test-controls">
+          <select id="testProjectSelect">
+            <option value="">-- 选择项目 --</option>
+          </select>
+          <button class="btn-primary btn-lg" onclick="startTest()" id="startTestBtn">
+            🚀 开始测试
+          </button>
+          <button class="btn-expanded btn-lg" onclick="startExpandedTest()" id="startExpandedBtn">
+            🔬 扩充测试场景开始测试
+          </button>
+          <button class="btn-secondary" onclick="clearLogs()">清除日志</button>
+        </div>
+
+        <!-- Progress bar -->
+        <div class="progress-container" id="progressContainer" style="display:none">
+          <div class="progress-bar">
+            <div class="progress-fill" id="progressFill"></div>
+          </div>
+          <span class="progress-text" id="progressText">0%</span>
+        </div>
+
+        <!-- Log console -->
+        <div class="console" id="logConsole">
+          <div class="console-header">
+            <span>日志输出</span>
+            <span class="console-status" id="consoleStatus">就绪</span>
+          </div>
+          <div class="console-body" id="consoleBody">
+            <div class="log-empty">等待开始测试...</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- === TAB: Results === -->
+      <section class="tab-pane" id="tab-results">
+        <div class="page-header">
+          <h2>测试报告</h2>
+          <p>查看测试执行结果</p>
+        </div>
+
+        <div class="card" id="resultSummary" style="display:none">
+          <h3>测试摘要</h3>
+          <div class="stats-grid" id="statsGrid"></div>
+        </div>
+
+        <div id="resultDetail"></div>
+
+        <div id="noResults" class="empty-state">
+          <p>暂无测试结果，请先运行测试</p>
+        </div>
+      </section>
+
+      <!-- === TAB: History === -->
+      <section class="tab-pane" id="tab-history">
+        <div class="page-header">
+          <h2>历史报告</h2>
+          <p>查看所有已执行的测试报告</p>
+        </div>
+
+        <div class="card">
+          <div class="form-group">
+            <button class="btn-secondary" onclick="loadHistory()">🔄 刷新</button>
+          </div>
+          <div id="historyList">
+            <p class="text-muted">加载中...</p>
+          </div>
+        </div>
+
+        <!-- History report detail (hidden until click) -->
+        <div class="card" id="historyDetail" style="display:none">
+          <h3 id="historyDetailTitle">报告详情</h3>
+          <div id="historyDetailBody"></div>
+        </div>
+      </section>
+
+      <!-- === TAB: Settings === -->
+      <section class="tab-pane" id="tab-settings">
+        <div class="page-header">
+          <h2>系统设置</h2>
+          <p>配置 AI 和 Playwright</p>
+        </div>
+
+        <div class="card">
+          <h3>AI 模型配置</h3>
+          <div class="form-group">
+            <label>当前提供商</label>
+            <p class="text-muted" id="aiProviderLabel">查询中...</p>
+          </div>
+          <div class="form-group">
+            <label>模型名称</label>
+            <p class="text-muted" id="aiModelLabel">-</p>
+          </div>
+          <p class="text-muted small">通过 config/settings.yaml 或 .env 文件修改 AI 配置后重启生效</p>
+        </div>
+
+        <div class="card">
+          <h3>Playwright 管理</h3>
+          <div class="form-group">
+            <label>当前版本</label>
+            <p id="pwVersion" class="text-muted">查询中...</p>
+          </div>
+          <div class="form-group">
+            <label>工作目录</label>
+            <input type="text" id="pwWorkDir" placeholder="D:\project" />
+          </div>
+          <button class="btn-primary" onclick="updatePlaywright()">更新 Playwright</button>
+          <span id="pwUpdateResult" class="save-hint"></span>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="/js/api.js"></script>
+  <script src="/js/websocket.js"></script>
+  <script src="/js/app.js"></script>
+</body>
+</html>

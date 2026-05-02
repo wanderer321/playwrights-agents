@@ -1,0 +1,30 @@
+INFO:     Started server process [51248]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8765 (Press CTRL+C to quit)
+INFO:     127.0.0.1:51742 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50635 - "POST /api/test/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60259 - "GET /api/test/status/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60260 - "GET /api/test/logs/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64188 - "GET /api/test/status/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64189 - "GET /api/test/logs/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52083 - "GET /api/test/status/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52084 - "GET /api/test/report/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62288 - "GET /api/test/report/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55057 - "GET /api/test/status/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56273 - "GET /api/test/logs/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59501 - "GET /api/test/status/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49710 - "GET /api/test/status/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49711 - "GET /api/test/logs/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63610 - "GET /api/test/report/6832ba26 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64053 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64055 - "POST /api/test/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52468 - "GET /api/test/status/dd1b0a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61821 - "GET /api/test/status/dd1b0a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61822 - "GET /api/test/logs/dd1b0a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50516 - "GET /api/test/status/dd1b0a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50517 - "GET /api/test/logs/dd1b0a2c HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49893 - "GET /api/projects HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51823 - "POST /api/test/start HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63425 - "GET /api/test/logs/64b82a41 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50774 - "GET /api/tasks HTTP/1.1" 200 OK

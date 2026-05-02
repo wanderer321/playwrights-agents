@@ -1,0 +1,317 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-29T05:31:24.719338",
+  "completed_at": "2026-04-29T05:41:03.119738",
+  "summary": {
+    "total": 26,
+    "passed": 3,
+    "failed": 23,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "TestActivityCreate",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_activity_create_fill_form",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 705, in test_activity_create_fill_form\n    self.app.navigate_to(\"/pages/activity-create/activity-create\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is using `navigate_to()` to navigate to '/pages/activity-create/activity-create', but this page is configured as a tabBar page in app.json. WeChat Mini Program framework prohibits using navigateTo for tabBar pages - you must use switchTab instead.",
+            "fix_suggestion": "Replace `self.app.navigate_to(\"/pages/activity-create/activity-create\")` with `self.app.switch_tab(\"/pages/activity-create/activity-create\")`. The switch_tab method is specifically designed for navigating to tabBar pages.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_create_form_validation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 681, in test_activity_create_form_validation\n    self.app.navigate_to(\"/pages/activity-create/activity-create\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is using navigate_to() to open a page that is registered as a tabBar page in the Mini Program's app.json. WeChat Mini Programs do not allow navigateTo for tabBar pages - they require switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/activity-create/activity-create\") with self.app.switch_tab(\"/pages/activity-create/activity-create\") for tabBar pages. Alternatively, use self.page.redirect_to() or self.app.relaunch() if you need to clear the page stack.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestActivityDetailAndInteraction",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_detail_001_view_activity_detail",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 229, in test_detail_001_view_activity_detail\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use navigate_to() to navigate to '/pages/index/index', but this page is configured as a tabbar page in the WeChat Mini Program. WeChat Mini Programs do not allow using navigateTo for tabbar pages - they require switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") to properly navigate to a tabbar page. TabBar pages are part of the bottom navigation bar and have special routing rules.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_detail_002_activity_registration_sign_up",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 265, in test_detail_002_activity_registration_sign_up\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use navigate_to() to open '/pages/index/index', but this page is configured as a tabbar page in app.json. WeChat Mini Programs do not allow navigateTo to tabbar pages - tabbar pages must be accessed using switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") to properly navigate to a tabbar page.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_detail_003_share_activity",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 324, in test_detail_003_share_activity\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test attempts to navigate to '/pages/index/index' using `navigate_to`, but this page is configured as a tabBar page in app.json. WeChat Mini Program APIs forbid using `navigateTo` for tabBar pages.",
+            "fix_suggestion": "Replace `self.app.navigate_to(\"/pages/index/index\")` with `self.app.switch_tab(\"/pages/index/index\")`.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestComponentsUnitTest",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_comp_001_component_rendering_props",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 524, in test_comp_001_component_rendering_props\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to navigate to '/pages/index/index' using navigate_to(), but this page is configured as a tabBar page in app.json. WeChat Mini Programs prohibit using navigateTo for tabbar pages.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") to correctly navigate to a tabbar page.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_comp_002_component_event_triggering",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 565, in test_comp_002_component_event_triggering\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use navigate_to() for a tabbar page '/pages/index/index'. In WeChat Mini Programs, tabbar pages cannot be navigated to using navigateTo - they require switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") for tabbar pages. Alternatively, use self.app.re_launch() if you need to reset the app state.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestCreditSystem",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_credit_display",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 805, in test_credit_display\n    credit_balance = self.page.get_element(\".credit-balance\")\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.credit-balance] not found\n",
+          "diagnosis": {
+            "root_cause": "The test attempts to access the element '.credit-balance' immediately, but the element does not exist in the DOM at that specific moment. This is most likely a timing issue where the UI has not yet finished rendering the credit data (possibly waiting for an async API response), or the selector is incorrect.",
+            "fix_suggestion": "1. Replace `self.page.get_element('.credit-balance')` with `self.page.wait_for('.credit-balance', timeout=10)` to handle asynchronous rendering delays.\n2. If the element is still not found after waiting, verify the WXML source to ensure the class name 'credit-balance' is correct and check if the element is conditionally rendered (e.g., via `wx:if`) based on data that might be missing.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestEducationAuth",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_education_auth_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 899, in test_education_auth_page\n    auth_form = self.page.get_element(\".auth-form\")\n                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.auth-form] not found\n",
+          "diagnosis": {
+            "root_cause": "Element with selector '.auth-form' is not found on the page. This is likely a timing issue where the auth form component has not yet rendered when get_element() is called. Auth forms often load dynamically after page navigation or API data fetch.",
+            "fix_suggestion": "Replace `self.page.get_element('.auth-form')` with `self.page.wait_for('.auth-form', timeout=5)` to allow time for the element to render. Also verify the selector is correct by checking the page's WXML structure, and ensure any prerequisite navigation or data loading has completed before accessing the element.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestHomeAndActivityList",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_home_001_home_page_rendering",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 103, in test_home_001_home_page_rendering\n    self.app.launch()\n    ^^^^^^^^^^^^^^^\nAttributeError: 'App' object has no attribute 'launch'. Did you mean: 'relaunch'?\n",
+          "diagnosis": {
+            "root_cause": "The Minium framework's App object does not have a 'launch' method. The correct method to start or restart the Mini Program is 'relaunch'.",
+            "fix_suggestion": "Replace self.app.launch() with self.app.relaunch(). If you intend to navigate to a specific page upon launch, use self.app.relaunch(path='/pages/index/index') with the correct page path.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_home_002_activity_list_pagination",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 130, in test_home_002_activity_list_pagination\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use `navigate_to()` to navigate to '/pages/index/index', but this page is configured as a tabbar page in app.json. WeChat Mini Program navigation rules prohibit using navigateTo for tabbar pages.",
+            "fix_suggestion": "Replace `self.app.navigate_to(\"/pages/index/index\")` with `self.app.switch_tab(\"/pages/index/index\")` since tabbar pages require switchTab navigation method instead of navigateTo.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_home_003_activity_search",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 174, in test_home_003_activity_search\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is using navigate_to() to navigate to '/pages/index/index', but this page is registered as a tabbar page in the Mini Program. WeChat Mini Programs do not allow using navigateTo for tabbar pages - you must use switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") to properly navigate to a tabbar page.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestLoginAndAuthorization",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_auth_001_wechat_user_login_flow",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 11, in test_auth_001_wechat_user_login_flow\n    self.app.launch()\n    ^^^^^^^^^^^^^^^\nAttributeError: 'App' object has no attribute 'launch'. Did you mean: 'relaunch'?\n",
+          "diagnosis": {
+            "root_cause": "The test script calls a non-existent method 'launch()' on the Minium App object. The Minium framework does not have a 'launch' method; the correct method to start or restart the Mini Program is 'relaunch'.",
+            "fix_suggestion": "Replace `self.app.launch()` with `self.app.relaunch()` in the test script.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_auth_002_location_authorization",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 59, in test_auth_002_location_authorization\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use `navigate_to()` to navigate to `/pages/index/index`, but this page is configured as a tabBar page in app.json. WeChat Mini Program framework prohibits using `navigateTo` for tabBar pages - you must use `switchTab` instead.",
+            "fix_suggestion": "Replace `self.app.navigate_to(\"/pages/index/index\")` with `self.app.switch_tab(\"/pages/index/index\")` since the index page is a tabBar page. Alternatively, if you need to use navigate_to, ensure the target page is not listed in the tabBar configuration in app.json.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestMemberCenter",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_member_center_display",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 762, in test_member_center_display\n    member_info = self.page.get_element(\".member-info\")\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.member-info] not found\n",
+          "diagnosis": {
+            "root_cause": "The test tries to access the element '.member-info' immediately, but the element does not exist in the DOM at that moment. This is most likely a timing issue where the page data is loading asynchronously (e.g., fetching user profile data) and the element renders after the assertion runs. Alternatively, the selector may be incorrect or the user is not logged in, preventing the member info section from rendering.",
+            "fix_suggestion": "1. Implement a wait mechanism to allow time for the element to render: `self.page.wait_for('.member-info', timeout=10)` before calling `get_element`. 2. Verify in the WXML that the class name is exactly 'member-info'. 3. Ensure the test script handles the login state correctly, as member info usually requires an authenticated session.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestNavigationAndStability",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_navigation_back_stack",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 618, in test_navigation_back_stack\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use `navigate_to()` to navigate to '/pages/index/index', but this page is configured as a tabBar page in app.json. WeChat Mini Program framework prohibits using navigateTo for tabBar pages - they must be accessed via switchTab instead.",
+            "fix_suggestion": "Replace `self.app.navigate_to(\"/pages/index/index\")` with `self.app.switch_tab(\"/pages/index/index\")` to properly navigate to a tabBar page. Alternatively, if you need to test navigation stack behavior, navigate to a non-tabBar page instead.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_network_error_handling",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 657, in test_network_error_handling\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test attempts to navigate to '/pages/index/index' using navigate_to, but this page is configured as a TabBar page in app.json. WeChat Mini Programs prohibit using navigateTo for TabBar pages; switchTab must be used instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\")",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_page_reload_resilience",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 640, in test_page_reload_resilience\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is attempting to use navigate_to() for a tabbar page. In WeChat Mini Programs, '/pages/index/index' is configured as a tabbar page in app.json, and tabbar pages cannot be navigated using navigateTo - they require switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") to properly navigate to tabbar pages.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestPaymentAndOrder",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_pay_001_payment_flow_simulation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 359, in test_pay_001_payment_flow_simulation\n    self.app.navigate_to(\"/pages/index/index\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is using navigate_to() to navigate to '/pages/index/index', but this page is configured as a tabbar page in app.json. WeChat Mini Program API does not allow using navigateTo for tabbar pages - you must use switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/index/index\") with self.app.switch_tab(\"/pages/index/index\") to properly navigate to a tabbar page. Alternatively, if you need to test the index page as a regular page, you would need to remove it from the tabBar configuration in app.json.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_pay_002_order_list_view",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 400, in test_pay_002_order_list_view\n    self.app.navigate_to(\"/pages/profile/profile\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is using navigate_to() to navigate to '/pages/profile/profile', but this page is configured as a tabBar page in app.json. WeChat Mini Program API prohibits using wx.navigateTo for tabBar pages - it requires wx.switchTab instead.",
+            "fix_suggestion": "Replace self.app.navigate_to(\"/pages/profile/profile\") with self.app.switch_tab(\"/pages/profile/profile\") to properly navigate to a tabBar page.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestSettings",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_notification_settings",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 872, in test_notification_settings\n    notification_switch = self.page.get_element(\".notification-switch\")\n                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.notification-switch] not found\n",
+          "diagnosis": {
+            "root_cause": "The test attempts to retrieve the element '.notification-switch' immediately, but the element does not exist in the DOM at that specific moment. This is likely because the page data hasn't finished loading/rendering, or the element is located inside a custom component requiring a cross-component selector.",
+            "fix_suggestion": "1. Add a wait condition before accessing the element: self.page.wait_for('.notification-switch', timeout=5). 2. If the element is inside a custom component, use the deep selector syntax: self.page.get_element('custom-component-name >>> .notification-switch').",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestUserCenter",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_user_001_user_profile_update",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 436, in test_user_001_user_profile_update\n    self.app.navigate_to(\"/pages/profile/profile\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 892, in navigate_to\n    page = self._change_route_async(\"navigateTo\", url, is_wait_url_change)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1165, in _change_route_async\n    cmd.get_open_result(wait_timeout)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 132, in get_open_result\n    return self._open_callback.get_result()\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\callback.py\", line 158, in get_result\n    return self._waiter.result()\n           ^^^^^^^^^^^^^^^^^^^^^\nminium.framework.exception.MiniCommandError: can not navigateTo a tabbar page\n",
+          "diagnosis": {
+            "root_cause": "The test is using `navigate_to()` to navigate to `/pages/profile/profile`, but this page is configured as a tabBar page in app.json. WeChat Mini Program does not allow using `navigateTo` for tabbar pages - they must use `switchTab` instead.",
+            "fix_suggestion": "Replace `self.app.navigate_to(\"/pages/profile/profile\")` with `self.app.switch_tab(\"/pages/profile/profile\")` to properly navigate to a tabbar page.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_user_002_feedback_contact_support",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 484, in test_user_002_feedback_contact_support\n    feedback_container = self.page.get_element(\".feedback-container\")\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.feedback-container] not found\n",
+          "diagnosis": {
+            "root_cause": "Element with selector '.feedback-container' does not exist in the current page at the time of query. This could be due to: (1) the element is conditionally rendered and requires a user action (e.g., clicking a feedback button) to appear, (2) the element hasn't finished rendering yet (timing issue), or (3) the selector class name is incorrect.",
+            "fix_suggestion": "1. If the feedback container appears after an action, add a step to trigger it first (e.g., click a 'feedback' or 'contact support' button). 2. Use `self.page.wait_for('.feedback-container', timeout=5)` before calling `get_element()` to handle timing issues. 3. Verify the correct class name by inspecting the mini program's WXML or using the developer tools to confirm the element selector.",
+            "confidence": "high"
+          }
+        }
+      ]
+    }
+  ]
+}

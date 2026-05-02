@@ -1,0 +1,81 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-29T05:55:27.803528",
+  "completed_at": "2026-04-29T06:05:13.784863",
+  "summary": {
+    "total": 34,
+    "passed": 28,
+    "failed": 6,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "TestPureActivity",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_activity_detail_loading_state",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 155, in test_activity_detail_loading_state\n    loading = self.page.get_element(\".loading--loading-container\")\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.loading--loading-container] not found\n",
+          "diagnosis": {
+            "root_cause": "Timing issue - The loading container element is transient and only appears briefly during page data loading. By the time get_element() executes, the page has likely finished loading and the loading element has been removed from the DOM. Loading states are short-lived by nature.",
+            "fix_suggestion": "Use wait_for() with an appropriate timeout to catch the transient loading element, or mock slow network conditions to ensure the loading state persists long enough to be detected. Example: `loading = self.page.wait_for('.loading--loading-container', timeout=5)`",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_history_cards",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 193, in test_activity_history_cards\n    card_header = first_card.get_element(\".card--card-header\")\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\element.py\", line 393, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.card--card-header] not found\n",
+          "diagnosis": {
+            "root_cause": "The element with class '.card--card-header' does not exist within the 'first_card' element at the time of query. This is likely a timing issue where the card container exists but its inner content (header) has not yet rendered, OR the selector class name is incorrect/has changed in the component.",
+            "fix_suggestion": "1. Add a wait_for() before accessing the element: first_card.wait_for('.card--card-header', timeout=5) then get_element(). 2. Verify the selector is correct by checking the actual WXML component structure. 3. Add a small delay or use page.wait_for() to ensure data is loaded before querying nested elements.",
+            "confidence": "medium"
+          }
+        },
+        {
+          "title": "test_activity_swiper_autoplay",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 102, in test_activity_swiper_autoplay\n    autoplay = swiper.get_attribute(\"autoplay\")\n               ^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\element.py\", line 101, in __getattribute__\n    return super(BaseElement, self).__getattribute__(item)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'ViewElement' object has no attribute 'get_attribute'. Did you mean: 'attribute'?\n",
+          "diagnosis": {
+            "root_cause": "Incorrect method name - Minium's ViewElement uses 'attribute()' method, not 'get_attribute()'. The test is using a method name that doesn't exist in the Minium API.",
+            "fix_suggestion": "Change 'swiper.get_attribute(\"autoplay\")' to 'swiper.attribute(\"autoplay\")' on line 102. The error message even suggests this: 'Did you mean: attribute?'",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_error_education_auth_disabled",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 427, in test_error_education_auth_disabled\n    disabled_attr = submit_btn.get_attribute(\"disabled\")\n                    ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\element.py\", line 101, in __getattribute__\n    return super(BaseElement, self).__getattribute__(item)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'BaseElement' object has no attribute 'get_attribute'. Did you mean: 'attribute'?\n",
+          "diagnosis": {
+            "root_cause": "Incorrect Minium API method name. The test is calling `get_attribute()` which doesn't exist on BaseElement. Minium uses `attribute()` method instead of `get_attribute()` to retrieve element attributes.",
+            "fix_suggestion": "Change `submit_btn.get_attribute(\"disabled\")` to `submit_btn.attribute(\"disabled\")`. The Minium framework uses `attribute()` as the method name for retrieving element attributes, not `get_attribute()` which is common in Selenium/other automation frameworks.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_user_phone_login_page",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 41, in test_user_phone_login_page\n    btn_open_type = login_btn.get_attribute(\"open-type\")\n                    ^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\element.py\", line 101, in __getattribute__\n    return super(BaseElement, self).__getattribute__(item)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'BaseElement' object has no attribute 'get_attribute'. Did you mean: 'attribute'?\n",
+          "diagnosis": {
+            "root_cause": "Incorrect API usage. The Minium framework's BaseElement class does not have a get_attribute method. The error message explicitly suggests using 'attribute' instead.",
+            "fix_suggestion": "Replace 'login_btn.get_attribute(\"open-type\")' with 'login_btn.attribute(\"open-type\")'.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_user_profile_menu_navigation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 72, in test_user_profile_menu_navigation\n    data_url = first_item.get_attribute(\"data-url\")\n               ^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\element.py\", line 101, in __getattribute__\n    return super(BaseElement, self).__getattribute__(item)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'BaseElement' object has no attribute 'get_attribute'. Did you mean: 'attribute'?\n",
+          "diagnosis": {
+            "root_cause": "Incorrect Minium API method name. The test is using 'get_attribute()' which is a Selenium-style API, but Minium's BaseElement uses 'attribute()' method instead.",
+            "fix_suggestion": "Change 'first_item.get_attribute(\"data-url\")' to 'first_item.attribute(\"data-url\")' on line 72 of test_gen_0.py",
+            "confidence": "high"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-29T12:38:13.280762",
+  "completed_at": "2026-04-29T12:48:26.215768",
+  "summary": {
+    "total": 28,
+    "passed": 22,
+    "failed": 6,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "TestPureActivity",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_home_002_pull_down_refresh",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 109, in test_home_002_pull_down_refresh\n    self.page.pull_down_refresh()\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 329, in __getattr__\n    is_property, attr = self.__get_page_attr(__name)\n                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 326, in __get_page_attr\n    return False, getattr(_current_page, __name)\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAttributeError: 'Page' object has no attribute 'pull_down_refresh'\n",
+          "diagnosis": {
+            "root_cause": "The test script attempts to call a non-existent method `pull_down_refresh()` on the Minium Page object. Minium's Page class does not expose a direct wrapper method with this specific name for the pull-down refresh action.",
+            "fix_suggestion": "Replace `self.page.pull_down_refresh()` with `self.page.call_method('startPullDownRefresh')`. This invokes the native WeChat Mini Program API `wx.startPullDownRefresh()` programmatically. Alternatively, if testing the gesture is required, use a swipe/touch action simulation.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_activity_history_tab_switching",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 539, in test_activity_history_tab_switching\n    self.assertIn(\"active\", past_tab.attribute(\"class\"),\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\assertbase.py\", line 60, in hook_assert\n    return src(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'active' not found in ['tab active'] : Past tab should be active after click\n",
+          "diagnosis": {
+            "root_cause": "The `attribute(\"class\")` method returns a list `['tab active']`, not a string. The `assertIn(\"active\", ['tab active'])` checks if \"active\" is an element in the list, but the list contains one element \"tab active\" (the full class string). The string \"active\" IS present as a substring within \"tab active\", but the assertion is checking list membership, not string containment.",
+            "fix_suggestion": "Change the assertion to check the string content within the list. Options:\n1. Access the first element: `self.assertIn(\"active\", past_tab.attribute(\"class\")[0])`\n2. Join the list: `self.assertIn(\"active\", \" \".join(past_tab.attribute(\"class\")))`\n3. Use any() for multiple class elements: `self.assertTrue(any(\"active\" in c for c in past_tab.attribute(\"class\")))`",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_auth_002_user_info_authorization",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 42, in test_auth_002_user_info_authorization\n    self.assertEqual(open_type, \"getPhoneNumber\",\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\assertbase.py\", line 60, in hook_assert\n    return src(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ['getPhoneNumber'] != 'getPhoneNumber' : Login button should have getPhoneNumber open-type\n",
+          "diagnosis": {
+            "root_case": "Type mismatch in assertion - the actual value `open_type` is a list `['getPhoneNumber']` but the test expects a string `'getPhoneNumber'`. The attribute retrieval method likely returns a list (possibly because multiple elements match the selector, or the API returns attribute values as arrays).",
+            "fix_suggestion": "Change the assertion to handle the list type. Options:\n1. Compare with a list: `self.assertEqual(open_type, ['getPhoneNumber'], ...)`\n2. Extract the first element: `self.assertEqual(open_type[0], 'getPhoneNumber', ...)`\n3. Use `assertIn` for membership: `self.assertIn('getPhoneNumber', open_type, ...)`\n\nAlso verify if the selector is matching multiple buttons, which would cause the attribute to be returned as a list for all matched elements.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_index_page_swiper_functionality",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 675, in test_index_page_swiper_functionality\n    self.assertEqual(duration, \"600\", \"Swiper duration should be 600ms\")\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\assertbase.py\", line 60, in hook_assert\n    return src(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ['600'] != '600' : Swiper duration should be 600ms\n",
+          "diagnosis": {
+            "root_case": "Type mismatch in assertion. The variable 'duration' contains a list ['600'], but the test asserts it against a string '600'. This usually happens when the selector retrieves multiple elements or the API returns attribute values in a list format.",
+            "fix_suggestion": "Modify the assertion to access the first element of the list or update the expected value to match the list format. Change `self.assertEqual(duration, \"600\", ...)` to `self.assertEqual(duration[0], \"600\", ...)` or `self.assertEqual(duration, [\"600\"], ...)`.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_user_001_my_orders_list",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 259, in test_user_001_my_orders_list\n    self.assertIn(\"active\", upcoming_tab.attribute(\"class\"),\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\assertbase.py\", line 60, in hook_assert\n    return src(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: 'active' not found in ['tab active'] : Upcoming tab should be active by default\n",
+          "diagnosis": {
+            "root_case": "The `attribute(\"class\")` method returns a list containing the full class string `['tab active']`, not a list of individual class names. The assertion `self.assertIn(\"active\", ['tab active'])` checks if \"active\" is an element in the list, but \"active\" is only a substring of the string element \"tab active\", not a separate list element.",
+            "fix_suggestion": "Change the assertion to check the string content. Either use `self.assertIn(\"active\", upcoming_tab.attribute(\"class\")[0])` to check the first element of the returned list, or use `self.assertIn(\"active\", ' '.join(upcoming_tab.attribute(\"class\")))` to handle multiple elements safely.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_user_002_get_phone_number",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 289, in test_user_002_get_phone_number\n    self.assertEqual(open_type, \"getPhoneNumber\",\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\assertbase.py\", line 60, in hook_assert\n    return src(self, *args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: ['getPhoneNumber'] != 'getPhoneNumber' : Button should trigger phone number retrieval\n",
+          "diagnosis": {
+            "root_cause": "Assertion mismatch - the 'open_type' variable is a list ['getPhoneNumber'] but the test is comparing it against a string 'getPhoneNumber'. The attribute getter is returning the value as a list rather than a plain string.",
+            "fix_suggestion": "Either access the first element of the list or update the expected value. Change the assertion to one of these options:\n1. self.assertEqual(open_type[0], \"getPhoneNumber\", \"Button should trigger phone number retrieval\")\n2. self.assertEqual(open_type, [\"getPhoneNumber\"], \"Button should trigger phone number retrieval\")\n3. self.assertIn(\"getPhoneNumber\", open_type, \"Button should trigger phone number retrieval\")",
+            "confidence": "high"
+          }
+        }
+      ]
+    }
+  ]
+}

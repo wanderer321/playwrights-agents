@@ -1,0 +1,265 @@
+{
+  "project_name": "智绘工坊",
+  "project_type": "h5",
+  "created_at": "2026-04-29T13:23:04.613232",
+  "completed_at": "2026-04-29T13:27:56.498028",
+  "summary": {
+    "total": 34,
+    "passed": 1,
+    "failed": 33,
+    "skipped": 0,
+    "duration_ms": 30.046
+  },
+  "suites": [
+    {
+      "title": "seed.spec.ts",
+      "file": "seed.spec.ts",
+      "tests": [
+        {
+          "title": "seed",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "接单大厅 (Order Hall)",
+      "file": "tests/hall/order-hall.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HALL-001: View order list and details",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-002: Filter orders by type",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-003: Search orders",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-004: Bookmark an order",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-005: Merchant registration",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-006: Verify order detail information",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Home / Workbench",
+      "file": "tests/home/home-module-cards.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HOME-001: Verify landing page loads with all module cards",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('h1').filter({ hasText: '智绘工坊' })\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('h1').filter({ hasText: '智绘工坊' })\u001b[22m\n\n\n   6 |\n   7 |     // Sidebar\n>  8 |     await expect(page.locator('h1').filter({ hasText: '智绘工坊' })).toBeVisible();\n     |                                                                  ^\n   9 |     await expect(page.getByText('AI修图+海报设计')).toBeVisible();\n  10 |\n  11 |     const navItems = ['工作台', 'AI修图', 'AI海报', '证件照', '订单管理', '接单大厅'];\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\home\\home-module-cards.spec.ts:8:66",
+          "diagnosis": {
+            "root_cause": "The locator `locator('h1').filter({ hasText: '智绘工坊' })` finds no matching elements. Either there is no h1 element on the page, or the h1 element does not contain the text '智绘工坊'. The filter() approach requires the h1 to exist first, then filters by text - if no h1 exists or none match, the result is empty.",
+            "fix_suggestion": "Use a more robust selector pattern. Try: 1) `page.getByRole('heading', { name: '智绘工坊', exact: true })` - semantic and reliable, or 2) `page.locator('h1 >> text=智绘工坊')` - chained selector, or 3) First verify the element exists with a simpler selector like `page.locator('h1')` to debug. If the text is not in an h1, use `page.getByText('智绘工坊', { exact: true })` instead.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "TC-HOME-002: Click module cards to navigate between pages",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HOME-003: Verify sidebar navigation items",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "证件照 (ID Photo Maker)",
+      "file": "tests/idphoto/idphoto-maker.spec.ts",
+      "tests": [
+        {
+          "title": "TC-IDPHOTO-001: Upload photo and verify preview",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-002: Select different ID photo sizes",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-003: Background color options",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-004: Beauty filter toggle",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-005: Quality check button",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-006: Single/Layout mode toggle",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-007: Download button states",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "订单管理 (Order Manager)",
+      "file": "tests/orders/order-manager.spec.ts",
+      "tests": [
+        {
+          "title": "TC-ORDER-001: Add a new customer",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-002: Search for customers",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-003: Create orders for a customer",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-004: Order status workflow",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-005: Empty states",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "AI修图 (Photo Editor)",
+      "file": "tests/photo/photo-editor.spec.ts",
+      "tests": [
+        {
+          "title": "TC-PHOTO-001: Upload an image and verify canvas rendering",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-002: Adjust image sliders and verify panel tabs",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-003: Beauty filter panel",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-004: Tools panel with AI background removal",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-005: Download button states",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "AI海报 (Poster Designer)",
+      "file": "tests/poster/poster-designer.spec.ts",
+      "tests": [
+        {
+          "title": "TC-POSTER-001: Browse poster templates panel",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-002: Canvas size settings",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-003: Add and edit text elements",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-004: Background color swatches",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-005: RGB/CMYK color mode toggle",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-006: Bleed line toggle",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-007: Export poster",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    }
+  ]
+}

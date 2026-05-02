@@ -1,0 +1,47 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-28T23:08:44.842971",
+  "completed_at": "2026-04-28T23:11:32.982575",
+  "summary": {
+    "total": 2,
+    "passed": 0,
+    "failed": 2,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "default",
+      "file": "",
+      "tests": [
+        {
+          "title": "[I 2026-04-28 23:10:46 minium loader#655 main] \u001b[32mimport package ��test_gen_0�� success, import package ���� fail\u001b[0m",
+          "status": "failed",
+          "error": null,
+          "diagnosis": {
+            "root_cause": "Please provide the error message, stack trace, and the relevant test code snippet so I can analyze the failure for you. I need the context of what went wrong (e.g., `Element not found`, `AssertionError`, or timeout logs) to determine the root cause.",
+            "fix_suggestion": "",
+            "confidence": "low"
+          }
+        }
+      ]
+    },
+    {
+      "title": "'test_gen_0.TestPureActivity'>>\u001b[0m",
+      "file": "",
+      "tests": [
+        {
+          "title": "====================case num:13, failed num:0, error num:13====================TestPureActivity:test_auth_001_wechat_user_login has error:",
+          "status": "failed",
+          "error": null,
+          "diagnosis": {
+            "root_cause": "No test failure details provided in the prompt.",
+            "fix_suggestion": "Please paste the error message, stack trace, and relevant test code snippet so I can analyze the issue.",
+            "confidence": "high"
+          }
+        }
+      ]
+    }
+  ]
+}

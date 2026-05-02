@@ -1,0 +1,471 @@
+{
+  "test_mode": "standard",
+  "project_name": "智绘工坊",
+  "project_type": "h5",
+  "created_at": "2026-04-29T15:16:47.109323",
+  "completed_at": "2026-04-29T15:29:52.189211",
+  "summary": {
+    "total": 50,
+    "passed": 22,
+    "failed": 28,
+    "skipped": 0,
+    "duration_ms": 30.028
+  },
+  "diagnostic_summary": {
+    "total_failures": 10,
+    "categories": {
+      "被测对象存在缺陷": 9,
+      "无法确定": 1
+    }
+  },
+  "suites": [
+    {
+      "title": "Home Module",
+      "file": "tests/generated/expanded_gen_0.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HOME-001: Verify Home Page Load and Layout",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('footer').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('footer').first()\u001b[22m\n\n\n  17 |     // Check for footer section visibility\n  18 |     const footer = page.locator('footer').first();\n> 19 |     await expect(footer).toBeVisible();\n     |                          ^\n  20 |\n  21 |     // Verify no console errors\n  22 |     const errors: string[] = [];\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen_0.spec.ts:19:26",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "Element not found - the page does not contain a <footer> element. The locator 'footer' returns zero matches, so even .first() cannot find anything. The footer section likely uses a different HTML structure (e.g., <div class=\"footer\"> or <div role=\"contentinfo\">) instead of the semantic <footer> tag.",
+            "fix_suggestion": "1. Take a page snapshot to identify the actual footer selector. Try alternatives like: page.locator('[role=\"contentinfo\"]'), page.locator('.footer'), or page.locator('div:has-text(\"Copyright\")'). 2. Verify the page has fully loaded and is on the correct URL before checking for footer. 3. Consider adding await page.waitForLoadState('networkidle') before the assertion.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "TC-HOME-002: Verify Navigation to Core Modules",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "ID Photo Module",
+      "file": "tests/generated/expanded_gen_0.spec.ts",
+      "tests": [
+        {
+          "title": "TC-IDP-001: Upload Image for ID Photo",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-002: Change Background Color",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-003: Download Processed ID Photo",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Poster Module",
+      "file": "tests/generated/expanded_gen_0.spec.ts",
+      "tests": [
+        {
+          "title": "TC-PST-001: Select Poster Template",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  144 |     // Check for template thumbnails\n  145 |     const templateCount = await templateCards.count();\n> 146 |     expect(templateCount).toBeGreaterThan(0);\n      |                           ^\n  147 |\n  148 |     // Click on first template\n  149 |     const firstTemplate = templateCards.first();\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen_0.spec.ts:146:27",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "The locator 'templateCards' found 0 elements, meaning the selector does not match anything in the current DOM or the elements have not rendered yet.",
+            "fix_suggestion": "1. Add a wait condition before counting: `await expect(templateCards.first()).toBeVisible();` to handle timing issues. 2. If that fails, verify the selector string for 'templateCards' is correct by checking the page snapshot for the actual class names or attributes of the template elements.",
+            "confidence": "medium"
+          }
+        },
+        {
+          "title": "TC-PST-002: Edit Poster Text Content",
+          "status": "failed",
+          "error": "Error: locator.fill: Error: Element is not an <input>, <textarea>, <select> or [contenteditable] and does not have a role allowing [aria-readonly]\nCall log:\n\u001b[2m  - waiting for locator('text, [contenteditable=\"true\"], .text-element, [class*=\"text\"]').first()\u001b[22m\n\u001b[2m    - locator resolved to <div class=\"flex h-screen w-screen bg-dark-950 text-dark-100 overflow-hidden\">…</div>\u001b[22m\n\u001b[2m    - fill(\"Test Poster Title\")\u001b[22m\n\u001b[2m  - attempting fill action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and editable\u001b[22m\n\n\n  171 |     if (await textElement.count() > 0) {\n  172 |       await textElement.click();\n> 173 |       await textElement.fill('Test Poster Title');\n      |                         ^\n  174 |\n  175 |       // Click outside or apply\n  176 |       const applyButton = page.getByRole('button', { name: /apply|确定|确认/i });\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen_0.spec.ts:173:25",
+          "diagnosis": {
+            "category": "unknown",
+            "category_label": "无法确定",
+            "explanation": "未能自动识别错误类型: Error: locator.fill: Error: Element is not an <input>, <textarea>, <select> or [contenteditable] and does not have a role allowing [aria-readonly]\nCall log:\n\u001b[2m  - waiting for locator('text, [content",
+            "root_cause": "The selector `text, [contenteditable=\"true\"], .text-element, [class*=\"text\"]` is too broad and matched a container `<div>` element (with class `text-dark-100`) instead of an actual input/editable element. The `.fill()` method only works on <input>, <textarea>, <select>, or [contenteditable] elements, not regular divs.",
+            "fix_suggestion": "1. Remove `[class*=\"text\"]` from the selector as it incorrectly matches elements with utility classes like 'text-dark-100'. 2. Use a more specific selector like `page.locator('input[type=\"text\"], input:not([type]), textarea, [contenteditable=\"true\"]')` or `page.getByRole('textbox')`. 3. Alternatively, if the element is a contenteditable div, ensure it has `contenteditable=\"true\"` attribute before calling fill, or use `.click()` followed by `page.keyboard.type()` for elements that require keyboard input simulation.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Orders Module",
+      "file": "tests/generated/expanded_gen_0.spec.ts",
+      "tests": [
+        {
+          "title": "TC-ORD-001: View Order List",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeTruthy\u001b[2m()\u001b[22m\n\nReceived: \u001b[31mfalse\u001b[39m\n\n  204 |     const hasPlaceholder = await noOrdersPlaceholder.count() > 0;\n  205 |\n> 206 |     expect(hasOrders || hasPlaceholder).toBeTruthy();\n      |                                         ^\n  207 |   });\n  208 |\n  209 |   test('TC-ORD-002: Filter Orders by Status', async ({ page }) => {\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen_0.spec.ts:206:41",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "Both 'hasOrders' and 'hasPlaceholder' evaluated to false, meaning neither orders nor the 'no orders' placeholder element were found. This suggests the selector for 'noOrdersPlaceholder' is incorrect or the element has a different structure/text than expected.",
+            "fix_suggestion": "1. Debug by adding: `await page.screenshot({ path: 'debug.png' });` and `console.log('Orders count:', await orders.count(), 'Placeholder count:', await noOrdersPlaceholder.count());` before the assertion. 2. Verify the placeholder selector matches actual DOM - check for text like 'No orders found', 'No results', or similar. 3. Add `await page.waitForLoadState('networkidle');` before checking to ensure data is loaded. 4. Consider that the placeholder might be in a different container or have dynamic classes.",
+            "confidence": "medium"
+          }
+        },
+        {
+          "title": "TC-ORD-002: Filter Orders by Status",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Photo Module",
+      "file": "tests/generated/expanded_gen_0.spec.ts",
+      "tests": [
+        {
+          "title": "TC-PHT-001: Basic Photo Edit Operation",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Hall Module",
+      "file": "tests/generated/expanded_gen_0.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HAL-001: Hall Entry Display",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n  300 |     const contentElements = page.locator('img, .content, [class*=\"content\"]');\n  301 |     const contentCount = await contentElements.count();\n> 302 |     expect(contentCount).toBeGreaterThan(0);\n      |                          ^\n  303 |\n  304 |     // Verify no missing resource errors\n  305 |     const missingResourceErrors = resourceErrors.filter(e => \n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen_0.spec.ts:302:26",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "The locator 'img, .content, [class*=\"content\"]' returned 0 elements, meaning the selector does not match any elements in the current DOM. This is likely because the class names or structure have changed, or the page has not finished rendering the content.",
+            "fix_suggestion": "1. Verify the page is fully loaded by adding `await page.waitForLoadState('networkidle')` before the count. 2. If it still fails, the selector is incorrect. Use a broader selector like `body *` or inspect the page to find the correct class names for the content container.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Home (Dashboard/Landing)",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HOME-001: Initial Page Load and Navigation",
+          "status": "failed",
+          "error": "Error: expect: Property 'toHaveLoadState' not found.\n\n  15 |     \n  16 |     // Wait for page load and verify load time\n> 17 |     await expect(page).toHaveLoadState('networkidle', { timeout: 3000 });\n     |                       ^\n  18 |     \n  19 |     // Verify all navigation cards/buttons are visible\n  20 |     const navCards = page.locator('[role=\"link\"], [role=\"button\"], .nav-card, .feature-card, a[href*=\"id-photo\"], a[href*=\"poster\"], a[href*=\"photo\"], a[href*=\"hall\"], a[href*=\"orders\"]');\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen.spec.ts:17:23",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "The method 'toHaveLoadState' does not exist on Playwright's expect assertion object. This is not a valid Playwright assertion. The correct method to wait for a specific load state is using the page object directly.",
+            "fix_suggestion": "Replace `await expect(page).toHaveLoadState('networkidle', { timeout: 3000 });` with `await page.waitForLoadState('networkidle', { timeout: 3000 });`.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "TC-HOME-002: Empty State for New User",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HOME-003: Rapid Module Switching",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HOME-004: Network Failure Resilience",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HOME-005: Responsive Layout Verification",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.feature-card, .nav-card, [data-testid*=\"card\"]').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.feature-card, .nav-card, [data-testid*=\"card\"]').first()\u001b[22m\n\n\n  131 |     \n  132 |     // Verify cards are still visible\n> 133 |     await expect(cards.first()).toBeVisible();\n      |                                 ^\n  134 |   });\n  135 |\n  136 |   test('TC-HOME-006: Session Expiry Handling', async ({ page }) => {\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen.spec.ts:133:33",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "Element not found - The locator '.feature-card, .nav-card, [data-testid*=\"card\"]' matches zero elements on the page. The page either has different class names for cards, the cards haven't rendered yet, or the page structure differs from what the test expects.",
+            "fix_suggestion": "1. First, debug by taking a screenshot or printing the page content to see actual elements: `await page.screenshot({ path: 'debug.png' })` or `console.log(await page.content())`. 2. Update the selector to match actual card elements on the page (e.g., check for '.card', '.item', 'article', etc.). 3. If cards load dynamically, add `await page.waitForSelector('.actual-card-class')` before the assertion. 4. Consider using a more generic selector like `page.locator('article')` or check the page for any elements with card-like structure.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "TC-HOME-006: Session Expiry Handling",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "ID Photo (ID Photo Generation)",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-IDP-001: Standard ID Photo Generation Flow",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-002: Invalid File Format Upload",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-003: Maximum File Size Boundary",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-004: Non-Human/Face Detection Failure",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-005: Browser Refresh During Processing",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-006: Double-Submit Prevention",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDP-007: Background Color Switching",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Photo (General Photo Editing)",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-PHO-001: Basic Photo Edit and Save",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHO-002: Undo/Redo State Management",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHO-003: Corrupted Image Handling",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHO-004: Extreme Aspect Ratio Crop",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHO-005: Mobile Viewport Interaction",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Poster (Poster Design)",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-POS-001: Create Poster from Template",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POS-002: Text Overflow Handling",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POS-003: XSS Injection in Text Fields",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POS-004: Missing Font Fallback",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POS-005: Auto-Save Recovery",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POS-006: Cross-Module Image Import",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Orders (Order Management)",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-ORD-001: View Order History",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORD-002: Pagination/Infinite Scroll",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORD-003: Payment Retry Flow",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORD-004: Deep Link to Non-Existent Order",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator(':text(\"not found\"), :text(\"不存在\"), :text(\"404\"), .error-page')\nExpected: visible\nTimeout: 5000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator(':text(\"not found\"), :text(\"不存在\"), :text(\"404\"), .error-page')\u001b[22m\n\n\n  707 |     // Check for 404 handling\n  708 |     const notFoundMessage = page.locator(':text(\"not found\"), :text(\"不存在\"), :text(\"404\"), .error-page');\n> 709 |     await expect(notFoundMessage).toBeVisible({ timeout: 5000 });\n      |                                   ^\n  710 |     \n  711 |     // Should not be blank screen or loader loop\n  712 |     const loader = page.locator('.loading, [role=\"progressbar\"]');\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen.spec.ts:709:35",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "The test expects a 404/error page to be visible, but none of the selectors matched any elements. This suggests either: (1) the page loaded successfully without a 404, (2) the application uses different error UI/text than the selectors account for, or (3) the test is missing a step to navigate to a non-existent route to trigger the 404.",
+            "fix_suggestion": "1. Verify the test navigates to a non-existent route before this assertion. 2. Take a screenshot or check page.content() to see what's actually rendered. 3. Update selectors to match the actual error page implementation, or add missing navigation step like `await page.goto('/non-existent-route-12345');` before checking for 404.",
+            "confidence": "medium"
+          }
+        },
+        {
+          "title": "TC-ORD-005: Filter and Sort Consistency",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORD-006: Order Creation from ID Photo",
+          "status": "timedOut",
+          "error": "\u001b[31mTest timeout of 30000ms exceeded.\u001b[39m",
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Hall (Exhibition/Showcase)",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HAL-001: Browse Gallery",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.gallery-item, [data-testid=\"gallery-item\"], .showcase-item').first()\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.gallery-item, [data-testid=\"gallery-item\"], .showcase-item').first()\u001b[22m\n\n\n  785 |     \n  786 |     const galleryItems = page.locator('.gallery-item, [data-testid=\"gallery-item\"], .showcase-item');\n> 787 |     await expect(galleryItems.first()).toBeVisible();\n      |                                        ^\n  788 |     \n  789 |     // Scroll to trigger lazy load\n  790 |     await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen.spec.ts:787:40",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "Element not found - none of the selectors in the comma-separated list (.gallery-item, [data-testid=\"gallery-item\"], .showcase-item) match any elements on the page. The gallery items either have different selectors, haven't loaded yet, or require user interaction to appear.",
+            "fix_suggestion": "1. First, capture a page snapshot to identify the actual selectors for gallery items: `await page.screenshot({ path: 'debug.png' });` or check `await page.locator('[class*=\"gallery\"], [class*=\"item\"], [class*=\"showcase\"]').all()` to find similar elements. 2. Check if gallery items are behind a loading state - wait for loading to complete with `await page.waitForSelector('.loading', { state: 'hidden' })` or similar. 3. Verify if the gallery needs to be scrolled into view or if a tab/button needs to be clicked first. 4. Update the selector to match the actual element attributes found on the page.",
+            "confidence": "medium"
+          }
+        },
+        {
+          "title": "TC-HAL-002: Search with Special Characters",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HAL-003: Broken Image Link Handling",
+          "status": "failed",
+          "error": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.gallery, [data-testid=\"gallery\"]')\nExpected: visible\nTimeout: 10000ms\nError: element(s) not found\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.gallery, [data-testid=\"gallery\"]')\u001b[22m\n\n\n  837 |     // Gallery should still render without crashing\n  838 |     const gallery = page.locator('.gallery, [data-testid=\"gallery\"]');\n> 839 |     await expect(gallery).toBeVisible();\n      |                           ^\n  840 |   });\n  841 |\n  842 |   test('TC-HAL-004: Deep Link to Specific Item', async ({ page, context }) => {\n    at D:\\githome\\PPT\\zhihui-workshop\\tests\\generated\\expanded_gen.spec.ts:839:27",
+          "diagnosis": {
+            "category": "app_bug",
+            "category_label": "被测对象存在缺陷",
+            "explanation": "断言失败，建议结合被测对象确认行为是否符合预期",
+            "root_cause": "The selector '.gallery, [data-testid=\"gallery\"]' does not match any element in the DOM. The element is either missing, has a different selector, or the page failed to render it.",
+            "fix_suggestion": "Use `await page.pause()` or check the trace to inspect the DOM. Look for the actual class name or test ID of the gallery component. Verify if the page loaded correctly or if there were prior errors preventing the gallery from rendering.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "TC-HAL-004: Deep Link to Specific Item",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HAL-005: Empty Gallery State",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Global & Cross-Cutting Concerns",
+      "file": "tests/generated/expanded_gen.spec.ts",
+      "tests": [
+        {
+          "title": "TC-GLB-001: Browser Back Button Navigation",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-GLB-002: Concurrent Session Login",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-GLB-003: Accessibility (a11y) Check",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-GLB-004: Language/Locale Switching",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    }
+  ]
+}

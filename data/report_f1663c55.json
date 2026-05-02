@@ -1,0 +1,14 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-29T06:32:27.970560",
+  "completed_at": "2026-04-29T06:59:18.329084",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 2,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": []
+}

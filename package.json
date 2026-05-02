@@ -1,0 +1,23 @@
+{
+  "name": "playwright-agents",
+  "version": "1.0.0",
+  "description": "将 Playwright 测试流程（计划 → 生成 → 执行 → 修复）封装为独立的单机 Web 应用。",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.59.1"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.59.1"
+  }
+}

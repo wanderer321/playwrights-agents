@@ -1,0 +1,266 @@
+{
+  "test_mode": "expanded",
+  "project_name": "智绘工坊",
+  "project_type": "h5",
+  "created_at": "2026-04-29T13:59:07.159330",
+  "completed_at": "2026-04-29T14:00:51.911427",
+  "summary": {
+    "total": 34,
+    "passed": 34,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 8.963
+  },
+  "diagnostic_summary": {
+    "total_failures": 0,
+    "categories": {}
+  },
+  "suites": [
+    {
+      "title": "seed.spec.ts",
+      "file": "seed.spec.ts",
+      "tests": [
+        {
+          "title": "seed",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "接单大厅 (Order Hall)",
+      "file": "tests/hall/order-hall.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HALL-001: View order list and details",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-002: Filter orders by type",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-003: Search orders",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-004: Bookmark an order",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-005: Merchant registration",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HALL-006: Verify order detail information",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "Home / Workbench",
+      "file": "tests/home/home-module-cards.spec.ts",
+      "tests": [
+        {
+          "title": "TC-HOME-001: Verify landing page loads with all module cards",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HOME-002: Click module cards to navigate between pages",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-HOME-003: Verify sidebar navigation items",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "证件照 (ID Photo Maker)",
+      "file": "tests/idphoto/idphoto-maker.spec.ts",
+      "tests": [
+        {
+          "title": "TC-IDPHOTO-001: Upload photo and verify preview",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-002: Select different ID photo sizes",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-003: Background color options",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-004: Beauty filter toggle",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-005: Quality check button",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-006: Single/Layout mode toggle",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-IDPHOTO-007: Download button states",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "订单管理 (Order Manager)",
+      "file": "tests/orders/order-manager.spec.ts",
+      "tests": [
+        {
+          "title": "TC-ORDER-001: Add a new customer",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-002: Search for customers",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-003: Create orders for a customer",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-004: Order status workflow",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-ORDER-005: Empty states",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "AI修图 (Photo Editor)",
+      "file": "tests/photo/photo-editor.spec.ts",
+      "tests": [
+        {
+          "title": "TC-PHOTO-001: Upload an image and verify canvas rendering",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-002: Adjust image sliders and verify panel tabs",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-003: Beauty filter panel",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-004: Tools panel with AI background removal",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-PHOTO-005: Download button states",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "AI海报 (Poster Designer)",
+      "file": "tests/poster/poster-designer.spec.ts",
+      "tests": [
+        {
+          "title": "TC-POSTER-001: Browse poster templates panel",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-002: Canvas size settings",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-003: Add and edit text elements",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-004: Background color swatches",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-005: RGB/CMYK color mode toggle",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-006: Bleed line toggle",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        },
+        {
+          "title": "TC-POSTER-007: Export poster",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    }
+  ]
+}

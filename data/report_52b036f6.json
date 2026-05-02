@@ -1,0 +1,54 @@
+{
+  "project_type": "h5",
+  "summary": {
+    "total": 1,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 1,
+    "duration_ms": 0.14
+  },
+  "suites": [
+    {
+      "title": "seed.spec.ts",
+      "file": "seed.spec.ts",
+      "tests": [
+        {
+          "title": "seed",
+          "status": "passed",
+          "error": null,
+          "diagnosis": null
+        }
+      ]
+    },
+    {
+      "title": "tests\\hall\\order-hall.spec.ts",
+      "file": "tests/hall/order-hall.spec.ts",
+      "tests": []
+    },
+    {
+      "title": "tests\\home\\home-module-cards.spec.ts",
+      "file": "tests/home/home-module-cards.spec.ts",
+      "tests": []
+    },
+    {
+      "title": "tests\\idphoto\\idphoto-maker.spec.ts",
+      "file": "tests/idphoto/idphoto-maker.spec.ts",
+      "tests": []
+    },
+    {
+      "title": "tests\\orders\\order-manager.spec.ts",
+      "file": "tests/orders/order-manager.spec.ts",
+      "tests": []
+    },
+    {
+      "title": "tests\\photo\\photo-editor.spec.ts",
+      "file": "tests/photo/photo-editor.spec.ts",
+      "tests": []
+    },
+    {
+      "title": "tests\\poster\\poster-designer.spec.ts",
+      "file": "tests/poster/poster-designer.spec.ts",
+      "tests": []
+    }
+  ]
+}

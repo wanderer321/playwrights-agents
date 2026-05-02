@@ -1,0 +1,949 @@
+=== 项目类型: 微信小程序 ===
+=== 步骤 1/3: 生成测试计划 ===
+[planner] 扫描项目结构 (miniprogram)...
+[planner] 项目路径: D:\githome\pure-activity\pure-activity
+类型: 微信小程序
+有 app.json: True
+有 project.config: True
+框架: 原生
+页面数: 81
+组件数: 5
+使用 Taro: False
+使用 Uni-app: False
+
+[planner] AI 生成测试计划中...
+[planner] 测试计划已生成 (5650 字符)
+计划已保存: D:\githome\playwright-agents\data\plan_583f369a.md
+=== 步骤 2/3: 生成测试代码 ===
+[generator] 生成 Minium 测试代码...
+[generator] 代码已生成 (16276 字符)
+[generator] 已生成 1 个测试文件
+[generator] 测试文件已复制到: D:\githome\pure-activity\pure-activity\minium_tests
+
+=== 步骤 3/3: 执行测试 ===
+[minium] 配置已保存: D:\githome\pure-activity\pure-activity\minium_tests\config.json
+[minium] 执行测试: minitest -c D:\githome\pure-activity\pure-activity\minium_tests\config.json -s D:\githome\pure-activity\pure-activity\minium_tests\suite.json
+[D 2026-04-28 23:10:46 minium loader#620 main] [35mcase directory path not specified, use current path[0m
+[I 2026-04-28 23:10:46 minium miniconfig#153 from_file] [32mload config from D:\githome\pure-activity\pure-activity\minium_tests\config.json[0m
+[I 2026-04-28 23:10:46 minium loader#128 load_from_suite] [32m
+==========Scan Cases from suite===========
+���� test_gen_0
+��  ���� TestPureActivity.test_auth_001_wechat_user_login
+��  ���� TestPureActivity.test_auth_002_get_user_phone_number
+��  ���� TestPureActivity.test_comp_001_custom_tab_bar_navigation
+��  ���� TestPureActivity.test_comp_002_activity_card_component
+��  ���� TestPureActivity.test_detail_001_view_activity_details
+��  ���� TestPureActivity.test_detail_002_wechat_location_navigation
+��  ���� TestPureActivity.test_detail_003_share_activity
+��  ���� TestPureActivity.test_home_001_home_page_load_and_navigation
+��  ���� TestPureActivity.test_home_002_activity_search_and_filter
+��  ���� TestPureActivity.test_pay_001_create_order_and_wechat_pay
+��  ���� TestPureActivity.test_pay_002_payment_cancellation
+��  ���� TestPureActivity.test_user_001_view_my_orders
+��  ���� TestPureActivity.test_user_002_cancel_order[0m
+[I 2026-04-28 23:10:46 minium loader#654 main] [32mload 13 cases[0m
+[I 2026-04-28 23:10:46 minium loader#655 main] [32mimport package ��test_gen_0�� success, import package ���� fail[0m
+[I 2026-04-28 23:10:46 minium loader#300 run_session] [32mstart session with fork mode 
+{'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046'}
+[0m
+[I 2026-04-28 23:10:47 minium minitest#202 init_miniprogram] [32mstart init miniprogram[0m
+[I 2026-04-28 23:10:47 minium basenative#59 wrapper] [32mcall IdeNative.start_wechat[0m
+[I 2026-04-28 23:10:47 minium basenative#63 wrapper] [32mcall IdeNative.start_wechat end None[0m
+[I 2026-04-28 23:10:47 minium wx_minium#738 launch_dev_tool] [32mStarting dev tool and launch MiniProgram project ...[0m
+[I 2026-04-28 23:10:47 minium minium_object#83 _do_shell] [32mde shell: cli.bat auto --project "D:\githome\pure-activity\pure-activity" --auto-port 9420[0m
+[I 2026-04-28 23:10:50 minium minium_object#101 _do_shell] [32merr:
+- initialize
+
+\u2716 initialize
+
+\u2716 reading IDE port file C:\Users\admin\AppData\Local\΢�ſ����߹���\User Data\3e5d725bf5abbd2bfd7bc047ee989e46\Default\.ide
+
+\u2714 IDE server started successfully, listening on http://127.0.0.1:55368
+- preparing
+\u2716 preparing
+[0m
+[I 2026-04-28 23:10:50 minium minium_object#102 _do_shell] [32mout:
+[error] IDE service port disabled. To use CLI Call, please enter y to confirm enabling CLI capability, or manually open IDE -> Settings -> Security Settings, and set Service Port On.
+For more details see: https://developers.weixin.qq.com/miniprogram/en/dev/devtools/cli.html
+[error] ���ߵķ���˿��ѹرա�Ҫʹ�������е��ù��ߣ������·����� y ��ȷ�Ͽ��������ֶ��򿪹��� -> ���� -> ��ȫ���ã�������˿ڿ�����
+��ϸ��Ϣ: https://developers.weixin.qq.com/miniprogram/dev/devtools/cli.html
+
+? Enable IDE Service (y/N) [27D[27C[2K[G? Enable IDE Service (y/N) y[28D[28C[2K[G? Enable IDE Service Yes[24D[24C
+[error] {
+  code: 10,
+  message: 'Error: ���� Error: ��Ҫ���µ�¼ (code 10)Error: ��Ҫ���µ�¼\n' +
+    '    at D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\code\\package.nw\\core.wxvpkg\\3f831e7255c55b0464f2f1c29d9d043e.js:2:2625\n' +
+    '    at async k.request (D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\code\\package.nw\\core.wxvpkg\\3f831e7255c55b0464f2f1c29d9d043e.js:2:1994)\n' +
+    '    at async k.run (D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\code\\package.nw\\core.wxvpkg\\3f831e7255c55b0464f2f1c29d9d043e.js:2:5242)'
+}
+[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_auth_001_wechat_user_login\\20260428231050069699'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_auth_002_get_user_phone_number\\20260428231050075814'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_comp_001_custom_tab_bar_navigation\\20260428231050079937'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_comp_002_activity_card_component\\20260428231050083483'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_detail_001_view_activity_details\\20260428231050087186'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_detail_002_wechat_location_navigation\\20260428231050091736'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_detail_003_share_activity\\20260428231050095298'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_home_001_home_page_load_and_navigation\\20260428231050098860'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_home_002_activity_search_and_filter\\20260428231050102417'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_pay_001_create_order_and_wechat_pay\\20260428231050105977'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_pay_002_payment_cancellation\\20260428231050109532'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_user_001_view_my_orders\\20260428231050113087'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[E 2026-04-28 23:10:50 minium assertbase#308 _get_error_info] [31mself._outcome is None, maybe a class error[0m
+[E 2026-04-28 23:10:50 minium assertbase#390 _get_stack_info] [31m<bound method MiniTest._miniClassSetUp of <class 'test_gen_0.TestPureActivity'>>[0m
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+[W 2026-04-28 23:10:50 minium assertbase#354 _log_info_when_error] [33mconfig: {'debug': False, 'base_dir': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests', 'platform': 'ide', 'app': 'wx', 'debug_mode': 'info', 'close_ide': False, 'auto_capture': 'auto', 'check_mp_foreground': True, 'auto_relaunch': True, 'device_desire': {}, 'account_info': {}, 'report_usage': True, 'remote_connect_timeout': 180, 'request_timeout': 60, 'use_push': True, 'full_reset': False, 'outputs': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'enable_app_log': False, 'enable_network_panel': False, 'project_path': 'D:\\githome\\pure-activity\\pure-activity', 'dev_tool_path': 'D:\\Program Files (x86)\\Tencent\\΢��web�����߹���\\cli.bat', 'test_port': 9420, 'mock_native_modal': {}, 'mock_request': [], 'auto_authorize': False, 'audits': None, 'teardown_snapshot': False, 'mock_images_dir': '', 'mock_images': {}, 'need_perf': False, 'appid': None, 'enable_h5': True, 'autofix': False, 'assert_capture': True, 'test_result_path': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs', 'python_path': 'D:\\Python312\\python.exe', 'framework_capture': True, 'error_capture': False, 'create_time': '20260428231046', 'case_output': 'D:\\githome\\pure-activity\\pure-activity\\minium_tests\\outputs\\20260428231046\\test_user_002_cancel_order\\20260428231050117641'}[0m
+[W 2026-04-28 23:10:50 minium assertbase#355 _log_info_when_error] [33mbuild info: {'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}[0m
+[E 2026-04-28 23:10:50 minium utils#166 wrapper] [31mcatch error: 'TestPureActivity' object has no attribute 'autofix_info'[0m
+[I 2026-04-28 23:10:50 minium miniresult#143 print_shot_msg] [32m
+====================case num:13, failed num:0, error num:13====================TestPureActivity:test_auth_001_wechat_user_login has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_auth_002_get_user_phone_number has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_comp_001_custom_tab_bar_navigation has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_comp_002_activity_card_component has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_detail_001_view_activity_details has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_detail_002_wechat_location_navigation has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_detail_003_share_activity has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_home_001_home_page_load_and_navigation has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_home_002_activity_search_and_filter has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_pay_001_create_order_and_wechat_pay has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_pay_002_payment_cancellation has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_user_001_view_my_orders has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+TestPureActivity:test_user_002_cancel_order has error:
+Traceback (most recent call last):
+  File "D:\Python312\Lib\site-packages\minium\framework\libs\unittest\suite.py", line 64, in _handleClassSetUp
+    _miniClassSetUp()
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 334, in _miniClassSetUp
+    native, mini, miniprogram = init_miniprogram(cls.CONFIG)
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 204, in init_miniprogram
+    mini = get_minium(cfg)
+           ^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\framework\minitest.py", line 164, in get_minium
+    g_minium = minium.miniprogram.get_minium_driver(conf=cfg, native=g_native)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\__init__.py", line 28, in get_minium_driver
+    return APP[application](conf, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 160, in __init__
+    self.launch_weapp()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 635, in launch_weapp
+    self.launch_dev_tool()
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\base_driver\minium_log.py", line 148, in wrapper
+    result = func(*args, **kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Python312\Lib\site-packages\minium\miniprogram\wx_minium.py", line 773, in launch_dev_tool
+    raise MiniLaunchError(err_msg)
+minium.framework.exception.MiniLaunchError: Error: ��Ҫ���µ�¼ (code 10)
+
+-------------------------------------------------------------------------------
+[0m
+[I 2026-04-28 23:11:00 minium.SESSION session#67 run] [32mcase queue is empty, test complete, release None[0m
+[I 2026-04-28 23:11:00 minium minitest#89 reset_native] [32mreset_native[0m
+[I 2026-04-28 23:11:00 minium basenative#59 wrapper] [32mcall IdeNative.stop_wechat[0m
+[I 2026-04-28 23:11:00 minium basenative#63 wrapper] [32mcall IdeNative.stop_wechat end None[0m
+[I 2026-04-28 23:11:00 minium basenative#59 wrapper] [32mcall IdeNative.release[0m
+[I 2026-04-28 23:11:00 minium basenative#59 wrapper] [32mcall BaseNative.release[0m
+[I 2026-04-28 23:11:00 minium basenative#250 release] [32mNative release[0m
+[I 2026-04-28 23:11:00 minium basenative#59 wrapper] [32mcall BaseNative.release_auto_authorize[0m
+[I 2026-04-28 23:11:00 minium basenative#63 wrapper] [32mcall BaseNative.release_auto_authorize end None[0m
+[I 2026-04-28 23:11:00 minium basenative#63 wrapper] [32mcall BaseNative.release end None[0m
+[I 2026-04-28 23:11:00 minium basenative#63 wrapper] [32mcall IdeNative.release end None[0m
+after load D:\githome\pure-activity\pure-activity\minium_tests\suite.json
+g_case_list size: 1
+test_auth_001_wechat_user_login (test_gen_0.TestPureActivity.test_auth_001_wechat_user_login)
+test_auth_002_get_user_phone_number (test_gen_0.TestPureActivity.test_auth_002_get_user_phone_number)
+test_comp_001_custom_tab_bar_navigation (test_gen_0.TestPureActivity.test_comp_001_custom_tab_bar_navigation)
+test_comp_002_activity_card_component (test_gen_0.TestPureActivity.test_comp_002_activity_card_component)
+test_detail_001_view_activity_details (test_gen_0.TestPureActivity.test_detail_001_view_activity_details)
+test_detail_002_wechat_location_navigation (test_gen_0.TestPureActivity.test_detail_002_wechat_location_navigation)
+test_detail_003_share_activity (test_gen_0.TestPureActivity.test_detail_003_share_activity)
+test_home_001_home_page_load_and_navigation (test_gen_0.TestPureActivity.test_home_001_home_page_load_and_navigation)
+test_home_002_activity_search_and_filter (test_gen_0.TestPureActivity.test_home_002_activity_search_and_filter)
+test_pay_001_create_order_and_wechat_pay (test_gen_0.TestPureActivity.test_pay_001_create_order_and_wechat_pay)
+test_pay_002_payment_cancellation (test_gen_0.TestPureActivity.test_pay_002_payment_cancellation)
+test_user_001_view_my_orders (test_gen_0.TestPureActivity.test_user_001_view_my_orders)
+test_user_002_cancel_order (test_gen_0.TestPureActivity.test_user_002_cancel_order)
+
+{'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}
+
+结果: 0/2 通过
+
+=== 步骤 3/3: 诊断 2 个失败用例 ===
+[healer] 分析失败原因...
+[healer] 诊断完成 (249 字符)
+[healer] 分析失败原因...
+[healer] 诊断完成 (232 字符)

@@ -1,0 +1,47 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-28T22:52:45.671122",
+  "completed_at": "2026-04-28T22:57:04.136919",
+  "summary": {
+    "total": 2,
+    "passed": 0,
+    "failed": 2,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "default",
+      "file": "",
+      "tests": [
+        {
+          "title": "[I 2026-04-28 22:56:21 minium loader#655 main] \u001b[32mimport package ��test_gen_0�� success, import package ���� fail\u001b[0m",
+          "status": "failed",
+          "error": null,
+          "diagnosis": {
+            "root_cause": "No test failure details provided. The prompt ended without the error log or code snippet.",
+            "fix_suggestion": "Please provide the error stack trace, the failing test code snippet, and the relevant page WXML/JS structure for analysis.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "'test_gen_0.TestPureActivity'>>\u001b[0m",
+      "file": "",
+      "tests": [
+        {
+          "title": "====================case num:14, failed num:0, error num:14====================TestPureActivity:test_auth_001_wechat_authorized_login has error:",
+          "status": "failed",
+          "error": null,
+          "diagnosis": {
+            "root_cause": "It appears you haven't provided the error details or test code for me to analyze.\n\nPlease paste the **error message**, **stack trace**, and the **relevant test code snippet** so I can diagnose the root cause of the failure.",
+            "fix_suggestion": "",
+            "confidence": "low"
+          }
+        }
+      ]
+    }
+  ]
+}

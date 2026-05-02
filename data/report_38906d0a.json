@@ -1,0 +1,177 @@
+{
+  "project_name": "纯粹搭子",
+  "project_type": "miniprogram",
+  "created_at": "2026-04-29T12:21:16.534137",
+  "completed_at": "2026-04-29T12:37:56.206902",
+  "summary": {
+    "total": 18,
+    "passed": 6,
+    "failed": 12,
+    "skipped": 0,
+    "duration_ms": 0
+  },
+  "suites": [
+    {
+      "title": "TestActivityBrowse",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_act_002_activity_detail_rendering",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 122, in test_act_002_activity_detail_rendering\n    time_element = self.page.get_element('.detail-time, .activity-time, [class*=\"time\"]')\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.detail-time, .activity-time, [class*=\"time\"]] not found\n",
+          "diagnosis": {
+            "root_cause": "Element not found - The time element with selector '.detail-time, .activity-time, [class*=\"time\"]' does not exist on the current page at the time of query. This is likely a timing issue where the activity detail page has navigated but the data/components haven't finished rendering, or the selector doesn't match the actual element class names in the component.",
+            "fix_suggestion": "1. Add a wait_for() before getting the element to allow the page to fully render: self.page.wait_for('.detail-time, .activity-time, [class*=\"time\"]', timeout=5) followed by get_element(). 2. Verify the actual class name by inspecting the WXML component or using the minium inspector. 3. Check if the activity detail page requires data to be loaded first - you may need to wait for data loading to complete. 4. Consider using a more specific or alternative selector based on the actual component structure.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestExceptionCompatibility",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_sys_001_network_error_handling",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 309, in test_sys_001_network_error_handling\n    self.app.mock_request(\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\utils\\utils.py\", line 90, in wrapper\n    ret = func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^\nTypeError: App.mock_request() got an unexpected keyword argument 'url_pattern'\n",
+          "diagnosis": {
+            "root_cause": "The test script calls self.app.mock_request() with the keyword argument 'url_pattern', but the installed Minium library version does not recognize this parameter name. This is an API signature mismatch.",
+            "fix_suggestion": "Change the argument name from 'url_pattern' to 'url'. The correct method signature is typically self.app.mock_request(url='...', ...). Verify the exact API definition in your Minium version documentation.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_sys_002_page_stack_depth_test",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 346, in test_sys_002_page_stack_depth_test\n    for page_path in pages_to_navigate[:maxStack]:\n                                        ^^^^^^^^\nNameError: name 'maxStack' is not defined. Did you mean: 'max_stack'?\n",
+          "diagnosis": {
+            "root_cause": "A Python NameError occurred because the variable 'maxStack' is not defined in the scope. The Python interpreter suggests 'max_stack' as a likely candidate, indicating a typo or a failure to follow Python's snake_case naming conventions.",
+            "fix_suggestion": "Check the variable definitions in the test file. Change 'maxStack' to 'max_stack' on line 346 of test_gen_0.py, or define the variable if it is missing.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestLocationMap",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_loc_001_get_current_location",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 262, in test_loc_001_get_current_location\n    self.app.mock_wx_method(\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1514, in mock_wx_method\n    return self._evaluate_js(\"mockWxMethod\", [method, args], code_format_info={\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 619, in _evaluate_js\n    return super(App, self)._evaluate_js(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_object.py\", line 206, in _evaluate_js\n    ret = self._evaluate(\n          ^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_object.py\", line 172, in _evaluate\n    return self.connection.send(\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\connection.py\", line 457, in send\n    return self._receive_response(cmd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\connection.py\", line 483, in _receive_response\n    raise response\nminium.framework.exception.MiniCommandError: True is not defined\n",
+          "diagnosis": {
+            "root_cause": "JavaScript runtime error - Python boolean 'True' is being passed to JavaScript without proper serialization. JavaScript doesn't recognize 'True' (capital T); it only understands 'true' (lowercase). This occurs when mock_wx_method serializes arguments for JavaScript evaluation in the mini program context.",
+            "fix_suggestion": "1. Check the arguments passed to mock_wx_method() - ensure boolean values are properly handled. Try passing boolean as string 'true' or use integer 1 instead of True. 2. Update minium library to latest version as this may be a known serialization bug. 3. If passing result data to mock, use dict with lowercase boolean strings: {'success': 'true'} instead of {'success': True}. 4. Review the mock_wx_method call around line 262 in test_gen_0.py to identify which parameter contains the problematic True value.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_loc_002_navigation_function",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 289, in test_loc_002_navigation_function\n    self.app.mock_wx_method(\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 1514, in mock_wx_method\n    return self._evaluate_js(\"mockWxMethod\", [method, args], code_format_info={\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 619, in _evaluate_js\n    return super(App, self)._evaluate_js(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_object.py\", line 206, in _evaluate_js\n    ret = self._evaluate(\n          ^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_object.py\", line 172, in _evaluate\n    return self.connection.send(\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\connection.py\", line 457, in send\n    return self._receive_response(cmd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\connection.py\", line 483, in _receive_response\n    raise response\nminium.framework.exception.MiniCommandError: True is not defined\n",
+          "diagnosis": {
+            "root_case": "The error 'True is not defined' is a JavaScript evaluation error. When calling mock_wx_method(), Python boolean values (True/False) are being serialized as 'True'/'False' strings instead of JavaScript's lowercase 'true'/'false'. JavaScript interprets 'True' as an undefined variable name, not a boolean value.",
+            "fix_suggestion": "Check the arguments passed to mock_wx_method() in test_loc_002_navigation_function. If you're passing Python boolean values (True/False), try passing them as integers (1/0) or strings ('true'/'false') instead. Alternatively, check if there's a newer version of minium that fixes this serialization issue. Example fix: change mock_wx_method(method, True) to mock_wx_method(method, 1) or mock_wx_method(method, 'true')",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestPaymentOrder",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_pay_001_create_order_and_payment",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 161, in test_pay_001_create_order_and_payment\n    self.app.mock_request(\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\utils\\utils.py\", line 90, in wrapper\n    ret = func(*args, **kwargs)\n          ^^^^^^^^^^^^^^^^^^^^^\nTypeError: App.mock_request() got an unexpected keyword argument 'url_pattern'\n",
+          "diagnosis": {
+            "root_case": "The test code is using an incorrect keyword argument 'url_pattern' for the minium API method 'mock_request'. This method typically expects a list of mock rule objects or uses the key 'pattern' inside a configuration dictionary, not a top-level keyword argument named 'url_pattern'.",
+            "fix_suggestion": "Update the 'mock_request' call to match the Minium API signature. Usually, mocks are passed as a list of dictionaries. Change from 'self.app.mock_request(url_pattern=\"...\")' to 'self.app.mock_request([{\"pattern\": \"...\", \"response\": ...}])'. Check the specific Minium version documentation for the exact structure of the mock rule object.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_pay_002_payment_cancel_or_failure",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 196, in test_pay_002_payment_cancel_or_failure\n    retry_button = self.page.get_element('.retry-btn, .repay-btn, button[class*=\"retry\"]')\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.retry-btn, .repay-btn, button[class*=\"retry\"]] not found\n",
+          "diagnosis": {
+            "root_case": "The test attempts to retrieve a retry button immediately after a payment action, but the element is not present in the DOM. This is most likely a timing issue where the payment failure modal or UI state has not finished rendering before the selector is executed. Alternatively, the comma-separated selector syntax may not be fully supported by the specific Minium version's `get_element` wrapper, or the payment succeeded (unexpectedly) preventing the retry button from appearing.",
+            "fix_suggestion": "1. Introduce a wait mechanism before accessing the element: `self.page.wait_for('.retry-btn', timeout=5)`. 2. If the comma-separated selector is not supported, try locating elements individually or using `get_elements` to check which one exists. 3. Add a debug screenshot or assertion before this line to verify the actual UI state (e.g., did the payment actually fail?).",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestProfilePage",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_profile_menu_navigation",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 413, in test_profile_menu_navigation\n    data_url.replace(\"/\", \"\") in current_path or \"/pages/\" in current_path,\n    ^^^^^^^^^^^^^^^^\nAttributeError: 'list' object has no attribute 'replace'\n",
+          "diagnosis": {
+            "root_case": "Type mismatch - the variable `data_url` is a list object, but the code is calling `.replace()` which is a string method. This typically happens when a selector returns multiple elements or when the extracted data structure differs from expectations (e.g., `get_attribute()` or similar method returned a list of values instead of a single string value).",
+            "fix_suggestion": "Check what `data_url` contains before the replace call. If it should be a single URL string, access the first element with `data_url[0].replace(\"/\", \"\")`. Alternatively, if you need to check all items in the list, iterate through them or use `any(url.replace(\"/\", \"\") in current_path for url in data_url)`. Add a debug print like `print(type(data_url), data_url)` to understand the actual data structure.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestShareSocial",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_share_001_forward_to_friends",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 212, in test_share_001_forward_to_friends\n    share_result = self.page.call_method(\"onShareAppMessage\")\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 383, in call_method\n    return self._send(\"Page.callMethod\", {\"method\": method, \"args\": args})\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 637, in _send\n    self.connection.send(cmd)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\connection.py\", line 457, in send\n    return self._receive_response(cmd)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\connection.py\", line 483, in _receive_response\n    raise response\nminium.framework.exception.MiniCommandError: page.onShareAppMessage not exists\n",
+          "diagnosis": {
+            "root_case": "The test is attempting to call `onShareAppMessage` as a regular page method using `call_method()`, but `onShareAppMessage` is a lifecycle callback/handler in WeChat Mini Programs, not a directly callable method. It only gets invoked by the WeChat framework when a user triggers a share action (e.g., tapping the share button in the top-right menu). The method doesn't exist as a callable function on the page object.",
+            "fix_suggestion": "To test share functionality, use one of these approaches instead:\n1. Simulate user share action: Use `page.call_wx_method('showShareMenu')` or trigger the share button UI element\n2. Verify share configuration: Check if `onShareAppMessage` is defined in the page's JS by inspecting the page source or using `page.data` to check share-related settings\n3. Use the correct Minium API for testing share: `self.mini_program.hook_page_method('onShareAppMessage', callback)` to intercept the share callback\n4. If the page requires a button to trigger share, find and click the share button element that has `open-type='share'`",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_share_002_generate_activity_poster",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 230, in test_share_002_generate_activity_poster\n    poster_button = self.page.get_element('.poster-btn, .share-poster, button[class*=\"poster\"]')\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[.poster-btn, .share-poster, button[class*=\"poster\"]] not found\n",
+          "diagnosis": {
+            "root_cause": "The CSS selector '.poster-btn, .share-poster, button[class*=\"poster\"]' failed to match any elements in the DOM. This is likely a timing issue where the poster generation UI has not finished rendering or animating, or the selector does not match the actual WXML structure (e.g., the button is inside a custom component).",
+            "fix_suggestion": "1. Add a wait_for() call before getting the element to handle rendering delays: self.page.wait_for('.poster-btn'). 2. Verify the selector matches the actual WXML; if the button is inside a custom component, use the component selector syntax (e.g., 'component-class >>> .poster-btn'). 3. Ensure the test has performed the necessary interaction (e.g., clicking a 'Share' menu) to trigger the poster UI appearance.",
+            "confidence": "high"
+          }
+        }
+      ]
+    },
+    {
+      "title": "TestUserAuth",
+      "file": "",
+      "tests": [
+        {
+          "title": "test_auth_001_wechat_authorization_login",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 13, in test_auth_001_wechat_authorization_login\n    auth_button = self.page.get_element('button[open-type=\"getUserInfo\"]')\n                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[button[open-type=\"getUserInfo\"]] not found\n",
+          "diagnosis": {
+            "root_case": "The test attempts to select a button with the attribute open-type=\"getUserInfo\", but this element does not exist on the page. This is most likely because WeChat deprecated the getUserInfo API (replaced by getUserProfile or nickname/avatar input components), so the developers likely removed or changed this button in the WXML. Alternatively, the page may not have fully loaded the component containing the button.",
+            "fix_suggestion": "1. Verify if the button still exists in the WXML using the developer tools; it may have been replaced by a standard button triggering wx.getUserProfile or a different UI component. 2. If the element exists but loads dynamically, use self.page.wait_for('button[open-type=\"getUserInfo\"]') before retrieving it. 3. Update the selector to match the current authorization UI implementation.",
+            "confidence": "high"
+          }
+        },
+        {
+          "title": "test_auth_002_phone_number_binding",
+          "status": "failed",
+          "error": "Traceback (most recent call last):\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 43, in testPartExecutor\n    yield\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\libs\\unittest\\case.py\", line 125, in run\n    self._callTestMethod(testMethod)\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\framework\\minitest.py\", line 789, in _callTestMethod\n    method()\n  File \"D:\\githome\\pure-activity\\pure-activity\\minium_tests\\test_gen_0.py\", line 54, in test_auth_002_phone_number_binding\n    phone_button = self.page.get_element('button[open-type=\"getPhoneNumber\"]')\n                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\app.py\", line 291, in wrapper\n    return func(*args, **kwargs)\n           ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\minium_log.py\", line 148, in wrapper\n    result = func(*args, **kwargs)\n             ^^^^^^^^^^^^^^^^^^^^^\n  File \"D:\\Python312\\Lib\\site-packages\\minium\\miniprogram\\base_driver\\page\\page.py\", line 375, in get_element\n    raise MiniElementNotFoundError(_selector)\nminium.framework.exception.MiniElementNotFoundError: element[button[open-type=\"getPhoneNumber\"]] not found\n",
+          "diagnosis": {
+            "root_cause": "The test script attempts to locate a button with the attribute `open-type=\"getPhoneNumber\"`, but the element does not exist in the DOM at the moment of query. This is likely because the element is conditionally rendered (e.g., only visible when a user is not logged in) or has not finished rendering due to network latency.",
+            "fix_suggestion": "1. Replace `get_element` with `wait_for` to handle rendering delays: `phone_button = self.page.wait_for('button[open-type=\"getPhoneNumber\"]', timeout=10)`.\n2. Verify in the test setup that the user account is in a state where phone binding is required (i.e., not already bound), otherwise the button might be hidden by `wx:if` logic.",
+            "confidence": "high"
+          }
+        }
+      ]
+    }
+  ]
+}

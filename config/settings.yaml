@@ -1,0 +1,15 @@
+ai:
+  provider: anthropic
+  model: glm-5
+  temperature: 0.3
+  max_tokens: 4096
+
+playwright:
+  version: latest
+  default_project: chromium
+  timeout: 30000
+
+server:
+  host: 127.0.0.1
+  port: 8765
+  log_level: info

@@ -1,0 +1,12 @@
+- initialize
+
+✔ IDE server has started, listening on http://127.0.0.1:55368
+- preparing
+✖ preparing
+[error] {
+  code: 10,
+  message: 'Error: 错误 Error: 需要重新登录 (code 10)Error: 需要重新登录\n' +
+    '    at D:\\Program Files (x86)\\Tencent\\微信web开发者工具\\code\\package.nw\\core.wxvpkg\\3f831e7255c55b0464f2f1c29d9d043e.js:2:2625\n' +
+    '    at async k.request (D:\\Program Files (x86)\\Tencent\\微信web开发者工具\\code\\package.nw\\core.wxvpkg\\3f831e7255c55b0464f2f1c29d9d043e.js:2:1994)\n' +
+    '    at async k.run (D:\\Program Files (x86)\\Tencent\\微信web开发者工具\\code\\package.nw\\core.wxvpkg\\3f831e7255c55b0464f2f1c29d9d043e.js:2:5242)'
+}

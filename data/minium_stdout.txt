@@ -1,0 +1,25 @@
+after load D:\githome\pure-activity\pure-activity\minium_tests\suite.json
+g_case_list size: 1
+test_auth_001_wechat_user_login (test_gen_0.TestPureActivity.test_auth_001_wechat_user_login)
+test_auth_002_get_user_phone_number (test_gen_0.TestPureActivity.test_auth_002_get_user_phone_number)
+test_comp_001_custom_tab_bar_navigation (test_gen_0.TestPureActivity.test_comp_001_custom_tab_bar_navigation)
+test_comp_002_activity_card_component (test_gen_0.TestPureActivity.test_comp_002_activity_card_component)
+test_detail_001_view_activity_details (test_gen_0.TestPureActivity.test_detail_001_view_activity_details)
+test_detail_002_wechat_location_navigation (test_gen_0.TestPureActivity.test_detail_002_wechat_location_navigation)
+test_detail_003_share_activity (test_gen_0.TestPureActivity.test_detail_003_share_activity)
+test_home_001_home_page_load_and_navigation (test_gen_0.TestPureActivity.test_home_001_home_page_load_and_navigation)
+test_home_002_activity_search_and_filter (test_gen_0.TestPureActivity.test_home_002_activity_search_and_filter)
+test_pay_001_create_order_and_wechat_pay (test_gen_0.TestPureActivity.test_pay_001_create_order_and_wechat_pay)
+test_pay_002_payment_cancellation (test_gen_0.TestPureActivity.test_pay_002_payment_cancellation)
+test_user_001_view_my_orders (test_gen_0.TestPureActivity.test_user_001_view_my_orders)
+test_user_002_cancel_order (test_gen_0.TestPureActivity.test_user_002_cancel_order)
+
+{'version': '1.6.0', 'revision': '33ce5b50b34ec18c51c054a7cc1bdfb3ab0a451b', 'branch': 'master', 'update_at': '2024-10-09 21:08:56'}
+
+结果: 0/2 通过
+
+=== 步骤 3/3: 诊断 2 个失败用例 ===
+[healer] 分析失败原因...
+[healer] 诊断完成 (249 字符)
+[healer] 分析失败原因...
+[healer] 诊断完成 (232 字符)
