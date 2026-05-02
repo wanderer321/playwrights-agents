@@ -83,20 +83,20 @@
                   <label>前端代码目录（可添加多个）</label>
                   <div class="input-group">
                     <button type="button" class="btn-secondary" onclick="browseDir('frontend')">📂 选择目录</button>
-                    <input type="text" id="frontendDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" />
+                    <input type="text" id="frontendDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" onblur="validateDirInput('frontend')" />
                     <button type="button" class="btn-secondary" onclick="addDirFromInput('frontend')">添加</button>
                   </div>
-                  <div id="hint-frontend" class="dir-hint" style="display:none">未能自动获取路径，请手动输入完整路径后点击"添加"</div>
+                  <div id="hint-frontend" class="dir-hint" style="display:none">浏览器安全限制无法获取完整路径，请在输入框中填写完整路径（如 <strong>D:\githome\项目名</strong>），然后点击"添加"</div>
                   <ul id="frontendDirs" class="dir-list"></ul>
                 </div>
                 <div class="form-group">
                   <label>后端代码目录（可添加多个）</label>
                   <div class="input-group">
                     <button type="button" class="btn-secondary" onclick="browseDir('backend')">📂 选择目录</button>
-                    <input type="text" id="backendDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" />
+                    <input type="text" id="backendDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" onblur="validateDirInput('backend')" />
                     <button type="button" class="btn-secondary" onclick="addDirFromInput('backend')">添加</button>
                   </div>
-                  <div id="hint-backend" class="dir-hint" style="display:none">未能自动获取路径，请手动输入完整路径后点击"添加"</div>
+                  <div id="hint-backend" class="dir-hint" style="display:none">浏览器安全限制无法获取完整路径，请在输入框中填写完整路径（如 <strong>D:\githome\项目名</strong>），然后点击"添加"</div>
                   <ul id="backendDirs" class="dir-list"></ul>
                 </div>
               </div>
@@ -105,10 +105,10 @@
                   <label>项目目录（可添加多个）</label>
                   <div class="input-group">
                     <button type="button" class="btn-secondary" onclick="browseDir('single')">📂 选择目录</button>
-                    <input type="text" id="singleDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" />
+                    <input type="text" id="singleDir" class="dir-path-input" placeholder="D:\githome\... 或手动输入路径" onblur="validateDirInput('single')" />
                     <button type="button" class="btn-secondary" onclick="addDirFromInput('single')">添加</button>
                   </div>
-                  <div id="hint-single" class="dir-hint" style="display:none">未能自动获取路径，请手动输入完整路径后点击"添加"</div>
+                  <div id="hint-single" class="dir-hint" style="display:none">浏览器安全限制无法获取完整路径，请在输入框中填写完整路径（如 <strong>D:\githome\项目名</strong>），然后点击"添加"</div>
                   <ul id="singleDirs" class="dir-list"></ul>
                 </div>
               </div>
@@ -120,7 +120,7 @@
                 <label>小程序项目目录（可添加多个）</label>
                 <div class="input-group">
                   <button type="button" class="btn-secondary" onclick="browseDir('miniapp')">📂 选择目录</button>
-                  <input type="text" id="miniappDir" class="dir-path-input" placeholder="D:\path\to\miniprogram" />
+                  <input type="text" id="miniappDir" class="dir-path-input" placeholder="D:\path\to\miniprogram" onblur="validateDirInput('miniapp')" />
                   <button type="button" class="btn-secondary" onclick="addDirFromInput('miniapp')">添加</button>
                 </div>
                 <ul id="miniappDirs" class="dir-list"></ul>
@@ -171,7 +171,17 @@
           <button class="btn-expanded btn-lg" onclick="startExpandedTest()" id="startExpandedBtn">
             🔬 扩充测试场景开始测试
           </button>
+          <button class="btn-stop btn-lg" onclick="stopTest()" id="stopTestBtn" style="display:none">
+            ⏹️ 停止测试
+          </button>
           <button class="btn-secondary" onclick="clearLogs()">清除日志</button>
+        </div>
+
+        <div class="test-options">
+          <label class="checkbox-label">
+            <input type="checkbox" id="forceRegeneratePlan" />
+            <span>强制重新生成测试计划（跳过缓存）</span>
+          </label>
         </div>
 
         <!-- Progress bar -->

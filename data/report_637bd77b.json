@@ -1,0 +1,20 @@
+{
+  "test_mode": "standard",
+  "project_name": "宠安健",
+  "project_type": "miniprogram",
+  "created_at": "2026-05-02T15:05:27.948463",
+  "completed_at": "2026-05-02T15:08:02.202464",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 0,
+    "error": "Minium not installed"
+  },
+  "diagnostic_summary": {
+    "total_failures": 0,
+    "categories": {}
+  },
+  "suites": []
+}

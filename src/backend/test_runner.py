@@ -36,6 +36,7 @@ class TestRunner:
         self.data_dir = Path(data_dir)
         self.tasks: dict[str, TestTask] = {}
         self._callbacks: dict[str, list[Callable]] = {}
+        self._asyncio_tasks: dict[str, asyncio.Task] = {}
         self.planner = Planner(ai)
         self.generator = Generator(ai)
         self.healer = Healer(ai)
@@ -67,6 +68,42 @@ class TestRunner:
     async def run_expanded_pipeline(self, task_id: str):
         await self._run_pipeline(task_id, expanded=True)
 
+    def _get_project_plan_key(self, project: dict) -> str:
+        """Build a cache key for a project's plan based on its project ID and type."""
+        pid = project.get("id", "")
+        ptype = project.get("project_type", "h5")
+        return f"project_{pid}_{ptype}"
+
+    def _find_cached_plan(self, project: dict, expanded: bool = False) -> str | None:
+        """Check if there's a previously generated plan for this project."""
+        plan_key = self._get_project_plan_key(project)
+        mode_suffix = "expanded" if expanded else "standard"
+        cache_file = self.data_dir / f"plan_{plan_key}_{mode_suffix}.md"
+        if cache_file.exists():
+            return cache_file.read_text(encoding="utf-8")
+        return None
+
+    def _save_plan_cache(self, project: dict, plan: str, expanded: bool = False):
+        """Save a plan to the project-level cache for future reuse."""
+        plan_key = self._get_project_plan_key(project)
+        mode_suffix = "expanded" if expanded else "standard"
+        cache_file = self.data_dir / f"plan_{plan_key}_{mode_suffix}.md"
+        cache_file.write_text(plan, encoding="utf-8")
+
+    async def stop_task(self, task_id: str):
+        """Cancel a running test task."""
+        task = self.tasks.get(task_id)
+        if not task:
+            return
+        if task.status == "running":
+            task.status = "stopped"
+            task.progress = 1.0
+            task.completed_at = datetime.datetime.now().isoformat()
+            await self._log(task_id, "\n[system] 测试已被用户手动停止\n")
+        async_task = self._asyncio_tasks.get(task_id)
+        if async_task and not async_task.done():
+            async_task.cancel()
+
     async def _run_pipeline(self, task_id: str, expanded: bool = False):
         task = self.tasks.get(task_id)
         if not task:
@@ -77,6 +114,10 @@ class TestRunner:
             await self._log(task_id, msg)
 
         try:
+            # Early exit if already stopped
+            if task.status == "stopped":
+                return
+
             project_type = task.project.get("project_type", "h5")
             minium_config = task.project.get("miniprogram_config", {})
 
@@ -98,12 +139,25 @@ class TestRunner:
 
             # Step 1: Plan
             step_count = "4"
+            mode_suffix = "扩充测试" if expanded else "标准测试"
             if expanded:
-                await log("=== 步骤 1/4: 生成扩充测试计划 ===\n")
+                await log("=== 步骤 1/4: 检查测试计划 ===\n")
             else:
-                await log("=== 步骤 1/4: 生成测试计划 ===\n")
+                await log("=== 步骤 1/4: 检查测试计划 ===\n")
             task.progress = 0.1
-            plan = await self.planner.run(root, project_type=project_type, expanded=expanded, log=log)
+
+            # Check for cached plan from a previous run
+            cached_plan = None if task.force_regenerate_plan else self._find_cached_plan(task.project, expanded=expanded)
+            if cached_plan:
+                plan = cached_plan
+                await log(f"[planner] 使用上一次的测试计划（已缓存）\n")
+            else:
+                await log(f"[planner] 未发现缓存，AI 生成新的测试计划...\n")
+                plan = await self.planner.run(root, project_type=project_type, expanded=expanded, log=log)
+                await log(f"[planner] 测试计划已生成 ({len(plan)} 字符)\n")
+
+            # Save to cache and task-specific file
+            self._save_plan_cache(task.project, plan, expanded=expanded)
             plan_file = self.data_dir / f"plan_{task.id}.md"
             plan_file.write_text(plan, encoding="utf-8")
             await log(f"计划已保存: {plan_file}\n")
@@ -293,6 +347,12 @@ class TestRunner:
             report_file = self.data_dir / f"report_{task.id}.json"
             report_file.write_text(json.dumps(task.result, ensure_ascii=False, indent=2), encoding="utf-8")
 
+        except asyncio.CancelledError:
+            # Task was cancelled by user via stop
+            if task.status != "stopped":
+                task.status = "stopped"
+                task.completed_at = datetime.datetime.now().isoformat()
+                await self._log(task_id, "\n[system] 测试已被用户手动停止\n")
         except Exception as e:
             task.status = "failed"
             await log(f"\n[错误] {e}\n")

@@ -101,6 +101,9 @@ input:focus, select:focus { outline: none; border-color: var(--primary); }
 .btn-expanded { background: #8b5cf6; color: white; border: none; border-radius: 6px; padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all 0.15s; font-weight: 500; }
 .btn-expanded:hover { background: #a78bfa; }
 .btn-expanded:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-stop { background: var(--danger); color: white; border: none; border-radius: 6px; padding: 8px 16px; font-size: 13px; cursor: pointer; transition: all 0.15s; font-weight: 500; }
+.btn-stop:hover { background: #dc2626; }
+.btn-stop:disabled { opacity: 0.5; cursor: not-allowed; }
 .btn-secondary { background: var(--bg-input); color: var(--text); border: 1px solid var(--border); }
 .btn-secondary:hover { background: var(--border); }
 .btn-lg { padding: 10px 24px; font-size: 15px; }

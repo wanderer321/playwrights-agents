@@ -39,11 +39,32 @@ class UpdateProjectRequest(BaseModel):
 
 class StartTestRequest(BaseModel):
     project_id: str
+    force_regenerate_plan: bool = False
+
+
+class StopTestRequest(BaseModel):
+    task_id: str
 
 
 class PlaywrightUpdateRequest(BaseModel):
     version: str | None = None
     work_dir: str = "."
+
+
+class ValidatePathRequest(BaseModel):
+    path: str
+
+
+@router.post("/validate-path")
+async def validate_path(req: ValidatePathRequest):
+    """Verify a directory path exists and is accessible."""
+    p = Path(req.path)
+    if p.exists() and p.is_dir():
+        return {"valid": True, "path": str(p), "message": "目录存在且可访问"}
+    elif p.exists() and not p.is_dir():
+        return {"valid": False, "path": req.path, "message": "路径存在但不是目录"}
+    else:
+        return {"valid": False, "path": req.path, "message": "目录不存在，请检查路径是否正确"}
 
 
 @router.get("/projects")
@@ -88,8 +109,11 @@ async def start_test(req: StartTestRequest):
         raise HTTPException(404, "项目不存在")
 
     task = runner.create_task(project)
+    task.force_regenerate_plan = req.force_regenerate_plan
     import asyncio
-    asyncio.create_task(runner.run_full_pipeline(task.id))
+    loop = asyncio.get_event_loop()
+    async_task = loop.create_task(runner.run_full_pipeline(task.id))
+    runner._asyncio_tasks[task.id] = async_task
     return {"task_id": task.id, "status": task.status}
 
 
@@ -101,9 +125,26 @@ async def start_expanded_test(req: StartTestRequest):
         raise HTTPException(404, "项目不存在")
 
     task = runner.create_task(project)
+    task.force_regenerate_plan = req.force_regenerate_plan
     import asyncio
-    asyncio.create_task(runner.run_expanded_pipeline(task.id))
+    loop = asyncio.get_event_loop()
+    async_task = loop.create_task(runner.run_expanded_pipeline(task.id))
+    runner._asyncio_tasks[task.id] = async_task
     return {"task_id": task.id, "status": task.status}
+
+
+@router.post("/test/stop")
+async def stop_test(req: StopTestRequest):
+    runner: TestRunner = deps()["test_runner"]
+    task = runner.tasks.get(req.task_id)
+    if not task:
+        raise HTTPException(404, "任务不存在")
+    if task.status != "running":
+        return {"task_id": task.id, "status": task.status, "message": f"测试状态为 {task.status}，无法停止"}
+    import asyncio
+    loop = asyncio.get_event_loop()
+    loop.create_task(runner.stop_task(req.task_id))
+    return {"task_id": task.id, "status": "stopping"}
 
 
 @router.get("/test/status/{tid}")

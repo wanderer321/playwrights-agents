@@ -33,7 +33,7 @@ async def ws_logs(ws: WebSocket, task_id: str):
         while True:
             await asyncio.sleep(1)
             await ws.send_json({"type": "progress", "status": task.status, "progress": task.progress})
-            if task.status in ("completed", "failed"):
+            if task.status in ("completed", "failed", "stopped"):
                 await ws.send_json({"type": "complete", "status": task.status, "result": task.result})
                 break
     except WebSocketDisconnect:

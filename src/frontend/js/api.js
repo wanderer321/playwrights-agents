@@ -33,10 +33,12 @@ const API = {
     });
   },
   deleteProject(id) { return this.del(`/api/projects/${id}`); },
+  validatePath(path) { return this.post('/api/validate-path', { path }); },
 
   // ── Test ──
-  startTest(projectId) { return this.post('/api/test/start', { project_id: projectId }); },
-  startExpandedTest(projectId) { return this.post('/api/test/start-expanded', { project_id: projectId }); },
+  startTest(projectId, forceRegeneratePlan = false) { return this.post('/api/test/start', { project_id: projectId, force_regenerate_plan: forceRegeneratePlan }); },
+  startExpandedTest(projectId, forceRegeneratePlan = false) { return this.post('/api/test/start-expanded', { project_id: projectId, force_regenerate_plan: forceRegeneratePlan }); },
+  stopTest(taskId) { return this.post('/api/test/stop', { task_id: taskId }); },
   testStatus(taskId) { return this.get(`/api/test/status/${taskId}`); },
   testReport(taskId) { return this.get(`/api/test/report/${taskId}`); },
   testLogs(taskId) { return this.get(`/api/test/logs/${taskId}`); },

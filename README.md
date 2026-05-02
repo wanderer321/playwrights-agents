@@ -87,6 +87,16 @@ ai:
 
 ### 3. 启动
 
+**方式一：一键启动（推荐）**
+
+```bash
+start.bat
+```
+
+此脚本会自动安装 Minium、配置 PATH 环境变量并启动前后端服务。
+
+**方式二：手动启动**
+
 ```bash
 python src\main.py
 ```
@@ -262,6 +272,36 @@ Windows 上 `npx` 实际是 `npx.cmd`，`create_subprocess_exec` 无法解析。
 ### 目录选择器无法获取路径
 
 Chrome 89+ 使用 `showDirectoryPicker()` 自动获取路径。老旧浏览器或不安全上下文（HTTP）会 fallback 到手动输入。
+
+### 微信小程序测试全部失败：IDE service port is disabled
+
+Minium 需要通过微信开发者工具的 CLI 服务端口来控制和通信小程序。**所有测试在初始化阶段就失败，测试代码并未执行**。
+
+**症状**：每条测试都报同样的错误：`The WeChat Developer Tools IDE service port is disabled`
+
+**解决方法**：
+
+1. 打开 **微信开发者工具**
+2. 进入 **设置** → **安全设置**
+3. 开启 **「服务端口」**（Service Port）
+4. 重新运行测试
+
+> 如果终端弹出提示 `Enable IDE Service (y/N)`，直接输入 `y` 即可自动开启。
+
+### 微信小程序测试失败：`d.on is not a function (code 10)`
+
+这是 Minium 与微信开发者工具**版本不兼容**导致的。通常发生在微信开发者工具自动更新后，其内部自动化 API 接口发生变化，Minium 无法正确通信。**测试在 `launch_dev_tool()` 阶段就失败，未执行到实际测试代码**。
+
+**症状**：错误信息中包含 `d.on is not a function (code 10)`，发生在 `launch_dev_tool()` 调用期间。
+
+**解决方法（按推荐顺序尝试）**：
+
+1. **降级微信开发者工具** — 卸载当前版本，安装一个与 Minium 1.6.0 兼容的稳定版本（推荐 1.06.x 系列）
+2. **更新 Minium** — 执行 `pip install --upgrade minium` 确保使用最新版本，查看 [Minium GitHub Releases](https://github.com/minitest-framework/minium) 获取开发者工具兼容版本说明
+3. **确保服务端口已开启** — 设置 → 安全设置 → 开启服务端口（默认端口 9420）
+4. **完全重启开发者工具** — 关闭后重新打开，确保小程序项目已加载
+
+> **注意**：Minium 最后更新于 2024 年 10 月，微信开发者工具的自动更新可能导致兼容性问题。建议在确认兼容的版本组合后关闭开发者工具的自动更新。
 
 ## 许可证
 

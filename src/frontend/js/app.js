@@ -1,64 +1,102 @@
 /* ── Main Application Logic ── */
 
+// Current running test task ID
+let currentTaskId = null;
+
 // ── Directory management for project form ──
 const pendingDirs = { frontend: [], backend: [], single: [], miniapp: [] };
+let _validateTimer = null;
 
+/**
+ * Open native directory picker.
+ * Browser security prevents returning the full path, so after selection
+ * we show only the folder name and prompt the user to prepend the full path.
+ */
 async function browseDir(type) {
-  // Try showDirectoryPicker first (Chrome 89+, but only returns dir name)
-  try {
-    const handle = await window.showDirectoryPicker();
-    const input = getDirInput(type);
-    if (input) {
-      input.value = handle.name;
-      input.placeholder = '输入完整路径，例如 D:\\githome\\' + handle.name;
-      input.focus();
-      input.select();
-    }
-    const hint = document.getElementById(`hint-${type}`);
-    if (hint) hint.style.display = 'block';
-    return;
-  } catch (err) {
-    if (err.name !== 'AbortError') {
-      console.warn('showDirectoryPicker failed, trying fallback:', err);
+  const input = getDirInput(type);
+
+  // Use showDirectoryPicker if available
+  if (window.showDirectoryPicker) {
+    try {
+      const handle = await window.showDirectoryPicker({ mode: 'read' });
+      if (input) {
+        input.value = handle.name;
+        input.placeholder = '⚠️ 请在前方补充完整路径，例如 D:\\githome\\' + handle.name;
+        input.focus();
+        input.select();
+      }
+      showDirHint(type);
+      return;
+    } catch (err) {
+      if (err.name !== 'AbortError') console.warn('showDirectoryPicker failed:', err);
+      return;
     }
   }
 
-  // Fallback: webkitdirectory input
+  // Fallback: webkitdirectory
+  const picker = document.getElementById('dirPicker');
+  picker.setAttribute('data-type', type);
+  picker.click();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
   const picker = document.getElementById('dirPicker');
   picker.onchange = function () {
-    if (picker.files && picker.files.length > 0) {
-      const first = picker.files[0];
-      const rel = first.webkitRelativePath;
-      let dirPath = '';
+    if (!picker.files || picker.files.length === 0) return;
+    const type = picker.getAttribute('data-type') || 'single';
+    const first = picker.files[0];
+    const rel = first.webkitRelativePath;
+    const topDir = rel.split('/')[0] || rel.split('\\')[0];
 
-      // file.path — Chrome extension (removed in newer versions)
-      if (first.path) {
-        dirPath = first.path.substring(0, first.path.length - rel.length).replace(/[/\\]$/, '');
-      }
-
-      if (dirPath) {
-        pendingDirs[type].push(dirPath);
-      } else {
-        const input = getDirInput(type);
-        if (input) {
-          input.value = topDir;
-          input.placeholder = '输入完整路径，例如 D:\\githome\\' + topDir;
-          input.focus();
-          input.select();
-        }
-        const hint = document.getElementById(`hint-${type}`);
-        if (hint) hint.style.display = 'block';
-      }
-      renderDirList(type);
+    const input = getDirInput(type);
+    if (input) {
+      input.value = topDir;
+      input.placeholder = '⚠️ 请在前方补充完整路径，例如 D:\\githome\\' + topDir;
+      input.focus();
+      input.select();
     }
+    showDirHint(type);
     picker.value = '';
   };
-  picker.click();
+});
+
+function showDirHint(type) {
+  const hint = document.getElementById(`hint-${type}`);
+  if (hint) hint.style.display = 'block';
 }
 
 function getDirInput(type) {
   const map = { frontend: 'frontendDir', backend: 'backendDir', single: 'singleDir', miniapp: 'miniappDir' };
   return document.getElementById(map[type]);
+}
+
+/** Validate the path in the input field against the backend. */
+function validateDirInput(type) {
+  const input = getDirInput(type);
+  const val = input?.value.trim();
+  if (!val) return;
+
+  // Quick local check: looks like a Windows absolute path?
+  const looksAbsolute = /^[A-Za-z]:[\\/]/.test(val) || /^[\\/]{2}/.test(val);
+  if (!looksAbsolute) {
+    input.style.borderColor = 'var(--warning)';
+    return;
+  }
+
+  // Debounced server-side check
+  clearTimeout(_validateTimer);
+  _validateTimer = setTimeout(async () => {
+    try {
+      const res = await API.validatePath(val);
+      if (res.valid) {
+        input.style.borderColor = 'var(--success)';
+      } else {
+        input.style.borderColor = 'var(--danger)';
+      }
+    } catch {
+      input.style.borderColor = '';
+    }
+  }, 500);
 }
 
 function addDirFromInput(type) {
@@ -67,6 +105,8 @@ function addDirFromInput(type) {
   if (!val) return;
   pendingDirs[type].push(val);
   input.value = '';
+  input.style.borderColor = '';
+  input.placeholder = 'D:\\githome\\... 或手动输入路径';
   renderDirList(type);
   const hint = document.getElementById(`hint-${type}`);
   if (hint) hint.style.display = 'none';
@@ -254,6 +294,7 @@ async function startTest() {
   const btn = document.getElementById('startTestBtn');
   btn.disabled = true;
   btn.textContent = '⏳ 测试中...';
+  document.getElementById('stopTestBtn').style.display = 'inline-block';
 
   document.getElementById('progressContainer').style.display = 'flex';
   updateProgress(0);
@@ -261,8 +302,11 @@ async function startTest() {
   setConsoleStatus('启动中...');
   appendLog(`[system] 项目类型: ${label}\n`);
 
+  const forceRegeneratePlan = document.getElementById('forceRegeneratePlan').checked;
+
   try {
-    const result = await API.startTest(projectId);
+    const result = await API.startTest(projectId, forceRegeneratePlan);
+    currentTaskId = result.task_id;
     wsClient.connect(result.task_id);
     appendLog(`[system] 任务已创建: ${result.task_id}\n`);
   } catch (err) {
@@ -284,6 +328,7 @@ async function startExpandedTest() {
   const btn = document.getElementById('startExpandedBtn');
   btn.disabled = true;
   btn.textContent = '⏳ 扩充测试中...';
+  document.getElementById('stopTestBtn').style.display = 'inline-block';
 
   document.getElementById('progressContainer').style.display = 'flex';
   updateProgress(0);
@@ -292,8 +337,11 @@ async function startExpandedTest() {
   appendLog('[system] 项目类型: ' + label + ' | 模式: 扩充测试\n');
   appendLog('[system] 将生成边界、异常、并发等更多场景的测试用例\n');
 
+  const forceRegeneratePlan = document.getElementById('forceRegeneratePlan').checked;
+
   try {
-    const result = await API.startExpandedTest(projectId);
+    const result = await API.startExpandedTest(projectId, forceRegeneratePlan);
+    currentTaskId = result.task_id;
     wsClient.connect(result.task_id);
     appendLog('[system] 扩充测试任务已创建: ' + result.task_id + '\n');
   } catch (err) {
@@ -306,6 +354,10 @@ function enableExpandedTestButton() {
   const btn = document.getElementById('startExpandedBtn');
   btn.disabled = false;
   btn.textContent = '🔬 扩充测试场景开始测试';
+  document.getElementById('stopTestBtn').style.display = 'none';
+  document.getElementById('stopTestBtn').disabled = false;
+  document.getElementById('stopTestBtn').textContent = '⏹️ 停止测试';
+  currentTaskId = null;
 }
 
 function enableTestButton() {
@@ -316,6 +368,28 @@ function enableTestButton() {
   if (btn2) {
     btn2.disabled = false;
     btn2.textContent = '🔬 扩充测试场景开始测试';
+  }
+  document.getElementById('stopTestBtn').style.display = 'none';
+  document.getElementById('stopTestBtn').disabled = false;
+  document.getElementById('stopTestBtn').textContent = '⏹️ 停止测试';
+  currentTaskId = null;
+}
+
+// ── Stop test ──
+async function stopTest() {
+  if (!currentTaskId) return;
+  if (!confirm('确定要停止当前测试吗？')) return;
+
+  document.getElementById('stopTestBtn').disabled = true;
+  document.getElementById('stopTestBtn').textContent = '⏹️ 停止中...';
+  appendLog('\n[system] 正在请求停止测试...\n');
+
+  try {
+    await API.stopTest(currentTaskId);
+  } catch (err) {
+    appendLog('[ERROR] 停止失败: ' + err.message + '\n');
+    document.getElementById('stopTestBtn').disabled = false;
+    document.getElementById('stopTestBtn').textContent = '⏹️ 停止测试';
   }
 }
 

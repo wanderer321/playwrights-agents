@@ -50,7 +50,10 @@ class LogWebSocket {
         }
         break;
       case 'complete':
-        setConsoleStatus(data.status === 'completed' ? '✅ 完成' : '❌ 失败');
+        setConsoleStatus(data.status === 'completed' ? '✅ 完成' : data.status === 'stopped' ? '⏹️ 已停止' : '❌ 失败');
+        if (data.status === 'stopped') {
+          appendLog('[system] 测试已停止\n');
+        }
         if (data.result) {
           renderResults(data.result);
         }

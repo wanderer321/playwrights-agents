@@ -1,0 +1,20 @@
+{
+  "test_mode": "standard",
+  "project_name": "宠安健2",
+  "project_type": "miniprogram",
+  "created_at": "2026-05-02T15:27:30.669789",
+  "completed_at": "2026-05-02T15:30:38.786808",
+  "summary": {
+    "total": 0,
+    "passed": 0,
+    "failed": 0,
+    "skipped": 0,
+    "duration_ms": 0,
+    "error": "DevTools not found: C:\\Users\\29264\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\微信开发者工具.bat"
+  },
+  "diagnostic_summary": {
+    "total_failures": 0,
+    "categories": {}
+  },
+  "suites": []
+}
